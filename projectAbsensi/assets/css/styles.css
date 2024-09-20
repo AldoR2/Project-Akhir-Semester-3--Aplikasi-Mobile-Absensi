@@ -1,0 +1,687 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --black-color: hsl(220, 24%, 12%);
+  --black-color-light: hsl(220, 24%, 15%);
+  --black-color-lighten: hsl(220, 20%, 18%);
+  --white-color: #fff;
+  --body-color: hsl(220, 100%, 97%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --normal-font-size: .938rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1024px) {
+  :root {
+    --normal-font-size: 1rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+}
+
+ul {
+  list-style: none;
+  /* Color highlighting when pressed on mobile devices */
+  /*-webkit-tap-highlight-color: transparent;*/
+}
+
+a {
+  text-decoration: none;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+/*=============== HEADER ===============*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--black-color);
+  box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
+  z-index: var(--z-fixed);
+}
+
+/*=============== NAV ===============*/
+.nav {
+  height: var(--header-height);
+}
+
+.nav__logo, 
+.nav__burger, 
+.nav__close {
+  color: var(--white-color);
+}
+
+.nav__data {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  display: inline-flex;
+  align-items: center;
+  column-gap: .25rem;
+  font-weight: var(--font-semi-bold);
+  /* Color highlighting when pressed on mobile devices */
+  /*-webkit-tap-highlight-color: transparent;*/
+}
+
+.nav__logo i {
+  font-weight: initial;
+  font-size: 1.25rem;
+}
+
+.nav__toggle {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+
+.nav__burger, 
+.nav__close {
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  inset: 0;
+  margin: auto;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: opacity .1s, transform .4s;
+}
+
+.nav__close {
+  opacity: 0;
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 1118px) {
+  .nav__menu {
+    position: absolute;
+    left: 0;
+    top: 2.5rem;
+    width: 100%;
+    height: calc(100vh - 3.5rem);
+    overflow: auto;
+    pointer-events: none;
+    opacity: 0;
+    transition: top .4s, opacity .3s;
+  }
+  .nav__menu::-webkit-scrollbar {
+    width: 0;
+  }
+  .nav__list {
+    background-color: var(--black-color);
+    padding-top: 1rem;
+  }
+}
+
+.nav__link {
+  color: var(--white-color);
+  background-color: var(--black-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color .3s;
+}
+
+.nav__link:hover {
+  background-color: var(--black-color-light);
+}
+
+/* Show menu */
+.show-menu {
+  opacity: 1;
+  top: 3.5rem;
+  pointer-events: initial;
+}
+
+/* Show icon */
+.show-icon .nav__burger {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+.show-icon .nav__close {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+/*=============== DROPDOWN ===============*/
+.dropdown__item {
+  cursor: pointer;
+}
+
+.dropdown__arrow {
+  font-size: 1.25rem;
+  font-weight: initial;
+  transition: transform .4s;
+}
+
+.dropdown__link, 
+.dropdown__sublink {
+  padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+  color: var(--white-color);
+  background-color: var(--black-color-light);
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+  font-weight: var(--font-semi-bold);
+  transition: background-color .3s;
+}
+
+.dropdown__link i, 
+.dropdown__sublink i {
+  font-size: 1.25rem;
+  font-weight: initial;
+}
+
+.dropdown__link:hover, 
+.dropdown__sublink:hover {
+  background-color: var(--black-color);
+}
+
+.dropdown__menu, 
+.dropdown__submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease-out;
+}
+
+/* Show dropdown menu & submenu */
+.dropdown__item:hover .dropdown__menu, 
+.dropdown__subitem:hover > .dropdown__submenu {
+  max-height: 1000px;
+  transition: max-height .4s ease-in;
+}
+
+/* Rotate dropdown icon */
+.dropdown__item:hover .dropdown__arrow {
+  transform: rotate(180deg);
+}
+
+/*=============== DROPDOWN SUBMENU ===============*/
+.dropdown__add {
+  margin-left: auto;
+}
+
+.dropdown__sublink {
+  background-color: var(--black-color-lighten);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 340px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+  .nav__link {
+    padding-inline: 1rem;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1118px) {
+  .container {
+    margin-inline: auto;
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav__toggle {
+    display: none;
+  }
+  .nav__list {
+    height: 100%;
+    display: flex;
+    column-gap: 3rem;
+  }
+  .nav__link {
+    height: 100%;
+    padding: 0;
+    justify-content: initial;
+    column-gap: .25rem;
+  }
+  .nav__link:hover {
+    background-color: transparent;
+  }
+
+  .dropdown__item, 
+  .dropdown__subitem {
+    position: relative;
+  }
+
+  .dropdown__menu, 
+  .dropdown__submenu {
+    max-height: initial;
+    overflow: initial;
+    position: absolute;
+    left: 0;
+    top: 6rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s, top .3s;
+  }
+
+  .dropdown__link, 
+  .dropdown__sublink {
+    padding-inline: 1rem 3.5rem;
+  }
+
+  .dropdown__subitem .dropdown__link {
+    padding-inline: 1rem;
+  }
+
+  .dropdown__submenu {
+    position: absolute;
+    left: 100%;
+    top: .5rem;
+  }
+
+  /* Show dropdown menu */
+  .dropdown__item:hover .dropdown__menu {
+    opacity: 1;
+    top: 5.5rem;
+    pointer-events: initial;
+    transition: top .3s;
+  }
+
+  /* Show dropdown submenu */
+  .dropdown__subitem:hover > .dropdown__submenu {
+    opacity: 1;
+    top: 0;
+    pointer-events: initial;
+    transition: top .3s;
+  }
+}
+
+/* ========== SECTION CONTENT ===========*/
+.content{
+  margin-top: 100px;
+}
+
+/* ========== SUB MENU SCREEN ===========*/
+.menu_screen{
+  width: 100%;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  background-color: #5a6ee4;
+  color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px rgba(30, 15, 95, 0.1);
+  text-align: center;
+  font-size: 24px;
+}
+
+/* ========== DROPDOWN =================*/
+.form_content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: var(--white-color);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown_semester {
+  padding: 30px 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown_semester label {
+  font-weight: var(--font-semi-bold);
+  color: #444;
+  margin-bottom: 0.5rem; /* Jarak antara label dan dropdown */
+}
+
+.dropdown {
+  padding: 0.75rem; /* Tambahkan padding untuk dropdown */
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: var(--white-color);
+  color: #444;
+  font-size: var(--normal-font-size);
+  appearance: none; /* Menghilangkan default arrow di dropdown */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><path fill="%23000" d="M5 7.5L1 3h8z"/></svg>'); /* Tambahkan icon panah */
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center; /* Posisi icon panah */
+  background-size: 10px; /* Ukuran icon panah */
+}
+
+.dropdown:focus{
+  border-color: aquamarine; /* Warna border saat focus */
+  box-shadow: 0 0 5px aquamarine; /* Menambahkan shadow saat input fokus */
+  outline: none; /* Menghilangkan outline default browser */
+}
+
+/* ================ BUTTON TABEL DATA ============== */
+.btn_refresh {
+  background-color: #3498db; /* Warna latar belakang biru */
+  color: white; /* Warna teks putih */
+  padding: 10px 20px; /* Padding tombol */
+  border: none; /* Menghilangkan border */
+  border-radius: 5px; /* Sudut melengkung sederhana */
+  font-size: 16px; /* Ukuran font */
+  cursor: pointer; /* Kursor pointer saat hover */
+  transition: background-color 0.2s ease; /* Animasi warna latar saat hover */
+  margin-bottom: 10px;
+}
+
+.btn_refresh:hover {
+  background-color: #2980b9; /* Mengubah warna latar belakang saat hover */
+}
+
+.btn_refresh:active {
+  background-color: #1e6f94; /* Warna lebih gelap saat tombol ditekan */
+}
+
+/* ================ SEARCH ==================== */
+
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.search label {
+  font-weight: 600; /* Menggunakan angka untuk font-weight */
+  margin-right: 0.5rem; /* Jarak antara label dan input */
+  color: #333; /* Warna label agar lebih gelap */
+}
+
+.search input {
+  width: 250px; /* Lebar input diperbesar sedikit */
+  padding: 0.55rem; /* Padding lebih besar agar lebih nyaman */
+  border: 2px solid #666; /* Border yang lebih tegas */
+  border-radius: 5px;
+  font-size: 16px; /* Ukuran font tetap atau gunakan variabel */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transisi halus untuk efek focus */
+}
+
+.search input:focus {
+  border-color: aquamarine; /* Warna border saat focus */
+  box-shadow: 0 0 5px aquamarine; /* Menambahkan shadow saat input fokus */
+  outline: none; /* Menghilangkan outline default browser */
+}
+
+
+
+/* ========== TABEL ===========*/
+
+.table-responsive{
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 15px;
+  overflow: auto;
+  margin: auto;
+  border-radius: 4px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+table{
+  width: 100%;
+  font-size: 14px;
+  color: #444;
+  white-space: nowrap;
+  border-collapse: collapse;
+}
+
+table>thead{
+  background-color: aqua;
+  color: var(--white-color);
+}
+
+table>thead th{
+  padding: 15px;
+}
+
+table th, table td{
+  border: 1px solid rgb(200, 199, 199);
+  padding: 7px 8px;
+  text-align: center;
+}
+
+table>tbody>tr>td>img{
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--white-color);
+  box-shadow: 0 2px 6px #0003; 
+}
+
+.action_btn{
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+}
+
+.action_btn>a{
+  text-decoration: none;
+  /* color: #444;
+  background: var(--white-color); */
+  border: 1px solid;
+  display: inline-block;
+  padding: 8px 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: .3s ease-in-out; 
+}
+
+.action_btn>a:nth-child(1){
+  background: rgb(31, 78, 198);
+  color: var(--white-color);
+}
+
+.action_btn>a:nth-child(2){
+  background: rgb(214, 9, 9);
+  color: var(--white-color);
+}
+
+.action_btn>a:hover{
+  box-shadow: 0 2px 8px #0003;
+}
+
+table>tbody>tr{
+  background-color: var(--white-color);
+  transition: .3s ease-in-out;
+}
+
+table>tbody>tr:nth-child(even){
+  background-color: var(--white-color);
+}
+
+table>tbody>tr:hover{
+  filter: drop-shadow(0 4px 8px #0002);
+  background-color: #eee;
+}
+
+@media screen and (max-width: 768px) {
+  .btn_refresh {
+    width: 100%; 
+    padding: 12px; 
+    font-size: 18px; 
+  }
+
+  .search {
+    flex-direction: column; /* Agar label dan input berbaris vertikal di ponsel */
+    justify-content: center; /* Pusatkan elemen secara horizontal */
+    align-items: center; /* Pusatkan elemen secara vertikal */
+  }
+
+  .search input {
+    width: 100%; /* Input memenuhi lebar layar */
+    max-width: 100%; /* Pastikan tidak melebihi layar */
+    padding: 12px; /* Padding lebih besar untuk layar sentuh */
+    font-size: 18px; /* Ukuran font lebih besar agar lebih mudah dibaca */
+    margin-top: 10px; /* Jarak antara label dan input */
+  }
+}
+
+
+/* ======== FORM INPUT */
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+textarea {
+  resize: none;
+}
+
+/* Styling for radio buttons */
+.radio-group {
+  display: flex;
+  gap: 10px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 8px;
+}
+
+/* Styling for submit button */
+.btn-submit {
+  background-color: #3498db;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #2980b9;
+}
+
+@media screen and (max-width: 600px) {
+  .form-container {
+    padding: 20px;
+  }
+}
+
+
+/* ============ home page ============== */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.card {
+  flex: 1;
+  background-color: #4e73df;
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: translateY(-10px);
+}
+.card h3 {
+  font-size: 1.5em;
+  margin: 0;
+}
+.card p {
+  font-size: 2.5em;
+  margin: 10px 0 0;
+}
+.chart-container {
+  width: 100%;
+  padding: 20px;
+  background-color: #f8f9fc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== REMIXICONS ===============-->
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="../assets/css/styles.css">
+
+      <title>Absensi</title>
+   </head>
+   <body>
+      <!--=============== HEADER ===============-->
+      <header class="header">
+         <nav class="nav container">
+            <div class="nav__data">
+               <a href="#" class="nav__logo">
+                  <img src="../assets/img/logoStikes.png" alt="logo-stikes-panti-waluyo" width="230px" height="50px"> 
+               </a>
+               
+               <div class="nav__toggle" id="nav-toggle">
+                  <i class="ri-menu-line nav__burger"></i>
+                  <i class="ri-close-line nav__close"></i>
+               </div>
+            </div>
+
+            <!--=============== NAV MENU ===============-->
+            <div class="nav__menu" id="nav-menu">
+               <ul class="nav__list">
+                  <li><a href="../home.html" class="nav__link">Home</a></li>
+
+                  <!-- Dropdown Mahasiswa -->
+                  <li class="dropdown__item">
+                     <div class="nav__link">
+                        Mahasiswa <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                     </div>
+
+                     <ul class="dropdown__menu">
+                        <li>
+                           <a href="../mahasiswa/formMhs.html" class="dropdown__link">
+                              <i class="ri-add-circle-line"></i> Tambah Mahasiswa
+                           </a>                          
+                        </li>
+
+                        <li>
+                           <a href="../mahasiswa/dataMhs.html" class="dropdown__link">
+                              <i class="ri-edit-2-line"></i> Data Mahasiswa
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+
+                  <!-- Dropdown Dosen -->
+                  <li class="dropdown__item">
+                     <div class="nav__link">
+                        Dosen <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                     </div>
+
+                     <ul class="dropdown__menu">
+                        <li>
+                           <a href="formDosen.html" class="dropdown__link">
+                              <i class="ri-add-circle-line"></i> Tambah Dosen
+                           </a>                          
+                        </li>
+
+                        <li>
+                           <a href="dataDosen.html" class="dropdown__link">
+                              <i class="ri-edit-2-line"></i> Data Dosen
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+
+                  <!-- Dropdown Matkul -->
+                  <li class="dropdown__item">
+                     <div class="nav__link">
+                        Matkul <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                     </div>
+
+                     <ul class="dropdown__menu">
+                        <li>
+                           <a href="../matkul/formMatkul.html" class="dropdown__link">
+                              <i class="ri-add-circle-line"></i> Tambah Matkul
+                           </a>                          
+                        </li>
+
+                        <li>
+                           <a href="../matkul/dataMatkul.html" class="dropdown__link">
+                              <i class="ri-edit-2-line"></i> Data Matkul
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+                  
+                  <!-- Dropdown Users -->
+                  <li class="dropdown__item">
+                     <div class="nav__link">
+                        Users <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                     </div>
+
+                     <ul class="dropdown__menu">
+                        <li>
+                           <a href="#" class="dropdown__link">
+                              <i class="ri-user-line"></i> Profiles
+                           </a>                          
+                        </li>
+
+                        <li>
+                           <a href="#" class="dropdown__link">
+                              <i class="ri-logout-circle-line"></i> LogOut
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </nav>
+      </header>
+
+      <section class="content container">
+         <div class="menu_screen">
+            <h1>Data Dosen</h1>
+         </div>
+
+         <div class="form_content">
+            <div class="dropdown_semester">
+                <label for="semester">Pilih Semester</label>
+                <select id="semester" class="dropdown">
+                    <option value="" disabled selected>Pilih Semester</option>
+                    <option value="1">Semester 1</option>
+                    <option value="2">Semester 2</option>
+                    <option value="3">Semester 3</option>
+                    <option value="4">Semester 4</option>
+                    <option value="5">Semester 5</option>
+                    <option value="6">Semester 6</option>
+                </select>
+            </div>
+        </div>
+
+         <div class="table-responsive">
+            <button class="btn_refresh"><i class="ri-refresh-line"></i> Refresh</button>
+            <div class="search">
+               <label for="search">Search:&nbsp;&nbsp;</label>
+               <input type="text" id="search">
+           </div>
+            <table>
+               <thead>
+                  <tr>
+                     <th>No</th>
+                     <th>Image</th>
+                     <th>Nim</th>
+                     <th>Nama</th>
+                     <th>Kelamin</th>
+                     <th>Jurusan</th>
+                     <th>Prodi</th>
+                     <th>Telepon</th>
+                     <th>Alamat</th>
+                     <th>Aksi</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>01</td>
+                     <td><img src="../assets/img/profil.jpeg" alt=""></td>
+                     <td>E41231275</td>
+                     <td>Edwin Kurniawan</td>
+                     <td>Laki-laki</td>
+                     <td>Teknologi Informasi</td>
+                     <td>Teknik Informatika</td>
+                     <td>081515173887</td>
+                     <td>Jember</td>
+                     <td>
+                        <span class="action_btn">
+                           <a href="#">Edit</a>
+                           <a href="#">Hapus</a>
+                        </span>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>01</td>
+                     <td><img src="../assets/img/profil.jpeg" alt=""></td>
+                     <td>E41231275</td>
+                     <td>Edwin Kurniawan</td>
+                     <td>Laki-laki</td>
+                     <td>Teknologi Informasi</td>
+                     <td>Teknik Informatika</td>
+                     <td>081515173887</td>
+                     <td>Jember</td>
+                     <td>
+                        <span class="action_btn">
+                           <a href="#">Edit</a>
+                           <a href="#">Hapus</a>
+                        </span>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+       </section>
+
+      <!--=============== MAIN JS ===============-->
+      <script src="../assets/js/main.js"></script>
+   </body>
+</html>
