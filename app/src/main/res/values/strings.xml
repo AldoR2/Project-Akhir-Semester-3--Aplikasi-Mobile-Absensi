@@ -19,6 +19,8 @@
     <string name="click_here_to_register">Click Here to Register</string>
     <string name="enter_username">Enter Username</string>
     <string name="enter_nim">Enter Nim</string>
+    <string name="pilih_program_studi">Pilih Program Studi</string>
+    <string name="pilih_kelas">Pilihlah Kelas</string>
     <string name="enter_nama">Enter Nama</string>
     <string name="nim">Nim</string>
     <string-array name="prodi_spinner">
@@ -26,5 +28,12 @@
         <item>tif</item>
         <item>mif</item>
         <item>bsd</item>
+    </string-array>
+    <string-array name="golongan_spinner">
+        <item>a</item>
+        <item>b</item>
+        <item>c</item>
+        <item>d</item>
+        <item>e</item>
     </string-array>
 </resources>
