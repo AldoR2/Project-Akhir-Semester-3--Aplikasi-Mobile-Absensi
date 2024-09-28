@@ -1,10 +1,14 @@
 package com.aldorayhanr.aplikasiabsensi;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,30 +31,58 @@ import java.util.Map;
 
 public class Registration extends AppCompatActivity {
 
-    TextInputEditText textInputEditTextName, textInputEditTextEmail, textInputEditTextPassword;
+    TextInputEditText textInputEditTextNim, textInputEditTextNama, textInputEditTextPassword;
     Button buttonSubmit;
-    String name, email, password;
+    String nim, nama, password, selectedProgramStudi;
     TextView textViewError;
     ProgressBar progressBar;
+    Spinner spinnerprogram_studi;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-        textInputEditTextName = findViewById(R.id.name);
-        textInputEditTextEmail = findViewById(R.id.email);
+
+        textInputEditTextNim = findViewById(R.id.nim);
+        textInputEditTextNama = findViewById(R.id.nama);
         textInputEditTextPassword = findViewById(R.id.password);
         buttonSubmit = findViewById(R.id.submit);
         textViewError = findViewById(R.id.error);
         progressBar = findViewById(R.id.loading);
+        spinnerprogram_studi = findViewById(R.id.prodi_spinner);
+
+
+        // Create an ArrayAdapter using the string array and a default spinner layout.
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.prodi_spinner,
+                android.R.layout.simple_spinner_item
+        );
+// Specify the layout to use when the list of choices appears.
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner.
+        spinnerprogram_studi.setAdapter(adapter);
+
+        spinnerprogram_studi.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        public void onItemSelected(AdapterView<?> parent, View view,
+        int pos, long id) {
+            // An item is selected. You can retrieve the selected item using
+            selectedProgramStudi = parent.getItemAtPosition(pos).toString();
+        }
+
+        public void onNothingSelected(AdapterView<?> parent) {
+            // Another interface callback.
+        }
+        });
 
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 textViewError.setVisibility(View.GONE);
                 progressBar.setVisibility(View.VISIBLE);
-                name = String.valueOf(textInputEditTextName.getText());
-                email = String.valueOf(textInputEditTextEmail.getText());
+                nim = String.valueOf(textInputEditTextNim.getText());
+                nama = String.valueOf(textInputEditTextNama.getText());
                 password = String.valueOf(textInputEditTextPassword.getText());
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
                 String url ="http://192.168.18.12/LoginRegister/login-registration-android/register.php";
@@ -81,9 +113,10 @@ public class Registration extends AppCompatActivity {
                 }){
                     protected Map<String, String> getParams(){
                         Map<String, String> paramV = new HashMap<>();
-                        paramV.put("name", name);
-                        paramV.put("email", email);
+                        paramV.put("nim", nim);
+                        paramV.put("nama", nama);
                         paramV.put("password", password);
+                        paramV.put("program_studi", selectedProgramStudi);
                         return paramV;
                     }
                 };

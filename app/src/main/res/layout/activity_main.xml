@@ -10,7 +10,7 @@
     tools:context=".MainActivity">
 
 <TextView
-    android:id="@+id/name"
+    android:id="@+id/nama"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="10dp"
@@ -21,12 +21,12 @@
     android:layout_marginHorizontal="20dp" />
 
     <TextView
-        android:id="@+id/email"
+        android:id="@+id/nim"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:textSize="20sp"
-        android:text="@string/email"
+        android:text="@string/nim"
         android:layout_marginTop="10dp"
         android:background="@color/white"
         android:layout_marginHorizontal="20dp" />

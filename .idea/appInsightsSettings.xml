@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.aldorayhanr.aplikasiabsensi" />
+                  <option name="mobileSdkAppId" value="1:1090385341115:android:834e40af287faa95cd179e" />
+                  <option name="projectId" value="aplikasi-absensi-e3b86" />
+                  <option name="projectNumber" value="1090385341115" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
