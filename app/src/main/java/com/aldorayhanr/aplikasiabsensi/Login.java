@@ -32,9 +32,9 @@ import java.util.Map;
 public class Login extends AppCompatActivity {
 
     TextView textViewRegisterNow;
-    TextInputEditText textInputEditTextEmail, textInputEditTextPassword;
+    TextInputEditText textInputEditTextNim, textInputEditTextPassword;
     Button buttonSubmit;
-    String name, email, password, apiKey;
+    String nim, nama, password;
     TextView textViewError;
     ProgressBar progressBar;
     SharedPreferences sharedPreferences;
@@ -44,7 +44,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         textViewRegisterNow = findViewById(R.id.registerNow);
-        textInputEditTextEmail = findViewById(R.id.email);
+        textInputEditTextNim = findViewById(R.id.nim);
         textInputEditTextPassword = findViewById(R.id.password);
         buttonSubmit = findViewById(R.id.submit);
         textViewError = findViewById(R.id.error);
@@ -62,7 +62,7 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 textViewError.setVisibility(View.GONE);
                 progressBar.setVisibility(View.VISIBLE);
-                email = String.valueOf(textInputEditTextEmail.getText());
+                nim = String.valueOf(textInputEditTextNim.getText());
                 password = String.valueOf(textInputEditTextPassword.getText());
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
                 String url ="http://192.168.18.12/LoginRegister/login-registration-android/login.php";
@@ -77,37 +77,39 @@ public class Login extends AppCompatActivity {
                                     String status = jsonObject.getString("status");
                                     String message = jsonObject.getString("message");
                                     if (status.equals("success")){
-                                        name = jsonObject.getString("name");
-                                        email = jsonObject.getString("email");
-                                        apiKey = jsonObject.getString("apiKey");
+                                        nim = jsonObject.getString("nim");
+                                        nama = jsonObject.getString("nama");
 
                                         SharedPreferences.Editor editor = sharedPreferences.edit();
-                                        editor.putString("Logged", "true");
-                                        editor.putString("Logged", name);
-                                        editor.putString("Logged", email);
-                                        editor.putString("Logged", apiKey);
+                                        editor.putString("logged", "true");
+                                        editor.putString("nim", nim);
+                                        editor.putString("nama", nama);
                                         editor.apply();
                                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                         startActivity(intent);
                                         finish();
 
+                                    } else {
+                                        textViewError.setText(message);
+                                        textViewError.setVisibility(View.VISIBLE);
                                     }
 
                                 } catch (JSONException e) {
-                                    throw new RuntimeException(e);
+                                    textViewError.setText("Error in parsing response. Please try again.");
+                                    textViewError.setVisibility(View.VISIBLE);
                                 }
                             }
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        progressBar.setVisibility(View.VISIBLE);
+                        progressBar.setVisibility(View.GONE);
                         textViewError.setText(error.getLocalizedMessage());
                         textViewError.setVisibility(View.VISIBLE);
                     }
                 }){
                     protected Map<String, String> getParams(){
                         Map<String, String> paramV = new HashMap<>();
-                        paramV.put("email", email);
+                        paramV.put("nim", nim);
                         paramV.put("password", password);
                         return paramV;
                     }

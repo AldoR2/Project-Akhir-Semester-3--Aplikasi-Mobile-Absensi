@@ -3,7 +3,6 @@
     <string name="username">username</string>
     <string name="password">password</string>
     <string name="login">Login</string>
-    <string name="email">Email</string>
     <string name="fullname">Fullname</string>
     <string name="signup">SignUp</string>
     <string name="loginhere">Already have an account? <u>Login</u></string>
@@ -18,4 +17,14 @@
     <string name="logout">Logout</string>
     <string name="fetch_user">Fetch user</string>
     <string name="click_here_to_register">Click Here to Register</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_nim">Enter Nim</string>
+    <string name="enter_nama">Enter Nama</string>
+    <string name="nim">Nim</string>
+    <string-array name="prodi_spinner">
+        <item>tkk</item>
+        <item>tif</item>
+        <item>mif</item>
+        <item>bsd</item>
+    </string-array>
 </resources>
