@@ -100,8 +100,6 @@ public class Login extends AppCompatActivity {
         });
     }
 
-
-
                 private void cekLogin(RequestQueue queue, String role) {
 
                 String url ="http://192.168.18.12/LoginRegister/login-registration-android/login.php";

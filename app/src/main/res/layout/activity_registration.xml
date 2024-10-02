@@ -44,6 +44,47 @@
             android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
 
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/prodi"
+            android:hint="@string/enter_program_studi"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/semester"
+            android:hint="@string/enter_semester"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/email"
+            android:hint="@string/enter_email"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,32 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:textStyle="bold"
-            android:text="Choose Program Studi"
-            android:layout_gravity="center_vertical" />
-
-        <Spinner
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="20dp"
-            android:id="@+id/prodi_spinner"
-            android:prompt="@string/pilih_program_studi"
-            android:layout_gravity="center_vertical"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="10dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:textStyle="bold"
-            android:text="Choose Golongan"
+            android:text="Choose Jenis Kelamin"
             android:layout_gravity="center_vertical" />
 
         <Spinner
@@ -89,34 +105,23 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginStart="51dp"
-            android:id="@+id/golongan_spinner"
+            android:id="@+id/jenis_kelamin"
             android:layout_gravity="center_vertical"/>
     </LinearLayout>
 
-    <LinearLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_marginVertical="10dp"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="10dp">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:textStyle="bold"
-            android:text="Choose Kelas"
-            android:layout_gravity="center_vertical" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/no_telp"
+            android:hint="@string/enter_no_telp"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <Spinner
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="78dp"
-            android:id="@+id/kelas_spinner"
-            android:prompt="@string/pilih_kelas"
-            android:layout_gravity="center_vertical"/>
-    </LinearLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"

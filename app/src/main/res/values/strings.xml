@@ -23,17 +23,11 @@
     <string name="pilih_kelas">Pilihlah Kelas</string>
     <string name="enter_nama">Enter Nama</string>
     <string name="nim">Nim</string>
-    <string-array name="prodi_spinner">
-        <item>tkk</item>
-        <item>tif</item>
-        <item>mif</item>
-        <item>bsd</item>
-    </string-array>
-    <string-array name="golongan_spinner">
-        <item>a</item>
-        <item>b</item>
-        <item>c</item>
-        <item>d</item>
-        <item>e</item>
+    <string name="enter_program_studi">Enter Program Studi</string>
+    <string name="enter_semester">Enter Semester</string>
+    <string name="enter_no_telp">Enter No Telp</string>
+    <string-array name="spinnerjenis_kelamin">
+        <item>laki_laki</item>
+        <item>perempuan</item>
     </string-array>
 </resources>

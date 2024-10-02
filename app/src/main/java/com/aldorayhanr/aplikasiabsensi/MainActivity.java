@@ -61,24 +61,37 @@ public class MainActivity extends AppCompatActivity {
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
+                                try {
+                                    // Mengurai respons JSON dari API logout
+                                    JSONObject jsonResponse = new JSONObject(response);
+                                    String status = jsonResponse.getString("status");
+                                    String message = jsonResponse.getString("message");
 
-                                if(response.equals("success")) {
+                                if(status.equals("success")) {
                                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                                    editor.putString("logged", "");
+                                    editor.putString("logged", "false");
                                     editor.putString("nim", "");
                                     editor.putString("nama", "");
                                     editor.apply();
+
+//                                    Redirect ke halaman login
                                     Intent intent = new Intent(getApplicationContext(), Login.class);
                                     startActivity(intent);
                                     finish();
+                                } else {
+                                    // Jika respons status bukan success, tampilkan pesan error
+                                    Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
                                 }
-                                else
-                                    Toast.makeText(MainActivity.this, response, Toast.LENGTH_SHORT).show();
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                    Toast.makeText(MainActivity.this, "Error parsing JSON", Toast.LENGTH_SHORT).show();
+                                }
                             }
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         error.printStackTrace();
+                        Toast.makeText(MainActivity.this, "Network error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }) {
                     protected Map<String, String> getParams() {
