@@ -1,0 +1,205 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ececec"
+    tools:context="fragment.profile_fragment">
+    
+    
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/backgroud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/top_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/foto_profil"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:src="@drawable/wkwk"
+            app:layout_constraintBottom_toBottomOf="@+id/backgroud"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/backgroud"
+            app:layout_constraintTop_toBottomOf="@+id/backgroud" />
+
+        <TextView
+            android:id="@+id/nama_profil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Bimaa Achmad Fill Ardhi"
+            android:textSize="20sp"
+            android:textColor="@color/grey"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/foto_profil"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="@+id/foto_profil"
+            app:layout_constraintTop_toBottomOf="@+id/foto_profil" />
+
+        <TextView
+            android:id="@+id/nim_profil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="E41231099"
+            android:textColor="@color/grey"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/nama_profil"
+            app:layout_constraintStart_toStartOf="@+id/nama_profil"
+            app:layout_constraintTop_toBottomOf="@+id/nama_profil" />
+
+        <LinearLayout
+            android:id="@+id/biodata_profil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/text_background"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/nim_profil"
+            app:layout_constraintStart_toStartOf="@+id/nim_profil"
+            app:layout_constraintTop_toBottomOf="@+id/nim_profil">
+
+            <TextView
+                android:id="@+id/program_studi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="7dp"
+                android:layout_weight="1"
+                android:text="Program Studi"
+                android:textAlignment="viewStart"
+                android:textColor="@color/blue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nama_program_studi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:text="Teknik Informatika"
+                android:textAlignment="viewStart"
+                android:textColor="@color/grey" />
+
+            <TextView
+                android:id="@+id/dosen_wali"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="7dp"
+                android:layout_weight="1"
+                android:text="Dosen Wali"
+                android:textAlignment="viewStart"
+                android:textColor="@color/blue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nama_dosen_wali"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:text="Aji Suharto Orde Baru"
+                android:textAlignment="viewStart"
+                android:textColor="@color/grey" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/button_profil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/biodata_profil"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/button_backgroud"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ganti_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/password"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="10dp"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="Ganti Password"
+                android:textAlignment="viewStart"
+                android:textColor="@color/semi_grey"
+                tools:ignore="RtlCompat" />
+            <TextView
+                android:id="@+id/oi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/password"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="Ganti Password"
+                android:textAlignment="viewStart"
+                android:drawablePadding="5dp"
+                android:textColor="@color/semi_grey"
+                tools:ignore="RtlCompat" />
+            <TextView
+                android:id="@+id/oii"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/password"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="Ganti Password"
+                android:textAlignment="viewStart"
+                android:drawablePadding="5dp"
+                android:textColor="@color/semi_grey"
+                tools:ignore="RtlCompat" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/background_logout"
+            app:layout_constraintTop_toBottomOf="@+id/button_profil"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:text="Logout"
+            android:drawableStart="@drawable/logout"
+            android:gravity="center"
+            android:paddingStart="20dp"
+            android:textAlignment="viewStart"
+            android:drawablePadding="5dp"
+            android:textColor="@color/cerah"
+            tools:ignore="RtlCompat" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
