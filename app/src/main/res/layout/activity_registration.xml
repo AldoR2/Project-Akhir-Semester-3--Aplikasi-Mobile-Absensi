@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_vertical"
-    tools:context=".Registration">
+    tools:context=".activity.Registration">
 
     <TextView
         android:text="@string/registration"

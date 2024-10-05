@@ -1,4 +1,4 @@
-package com.aldorayhanr.aplikasiabsensi;
+package com.aldorayhanr.aplikasiabsensi.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,14 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
+import com.aldorayhanr.aplikasiabsensi.R;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -50,7 +46,7 @@ public class Login extends AppCompatActivity {
         buttonSubmit = findViewById(R.id.submit);
         textViewError = findViewById(R.id.error);
         progressBar = findViewById(R.id.loading);
-        sharedPreferences = getSharedPreferences("MyAppName", MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("Preferences", MODE_PRIVATE);
 
 //        Cek apakah sudah login
         if(sharedPreferences.getString("logged", "false").equals("true")){
