@@ -4,21 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ececec"
-    tools:context="fragment.profile_fragment">
-    
-    
-
+    tools:context=".fragment.profile_fragment">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
         </LinearLayout>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <ImageView
             android:id="@+id/backgroud"
             android:layout_width="wrap_content"
@@ -28,7 +22,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
         <ImageView
             android:id="@+id/foto_profil"
             android:layout_width="110dp"
@@ -38,7 +31,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/backgroud"
             app:layout_constraintTop_toBottomOf="@+id/backgroud" />
-
         <TextView
             android:id="@+id/nama_profil"
             android:layout_width="wrap_content"
@@ -52,7 +44,6 @@
             app:layout_constraintHorizontal_bias="0.508"
             app:layout_constraintStart_toStartOf="@+id/foto_profil"
             app:layout_constraintTop_toBottomOf="@+id/foto_profil" />
-
         <TextView
             android:id="@+id/nim_profil"
             android:layout_width="wrap_content"
@@ -64,7 +55,6 @@
             app:layout_constraintEnd_toEndOf="@+id/nama_profil"
             app:layout_constraintStart_toStartOf="@+id/nama_profil"
             app:layout_constraintTop_toBottomOf="@+id/nama_profil" />
-
         <LinearLayout
             android:id="@+id/biodata_profil"
             android:layout_width="match_parent"
@@ -79,7 +69,6 @@
             app:layout_constraintEnd_toEndOf="@+id/nim_profil"
             app:layout_constraintStart_toStartOf="@+id/nim_profil"
             app:layout_constraintTop_toBottomOf="@+id/nim_profil">
-
             <TextView
                 android:id="@+id/program_studi"
                 android:layout_width="wrap_content"
@@ -91,7 +80,6 @@
                 android:textAlignment="viewStart"
                 android:textColor="@color/blue"
                 android:textStyle="bold" />
-
             <TextView
                 android:id="@+id/nama_program_studi"
                 android:layout_width="wrap_content"
@@ -101,7 +89,6 @@
                 android:text="Teknik Informatika"
                 android:textAlignment="viewStart"
                 android:textColor="@color/grey" />
-
             <TextView
                 android:id="@+id/dosen_wali"
                 android:layout_width="wrap_content"
@@ -113,7 +100,6 @@
                 android:textAlignment="viewStart"
                 android:textColor="@color/blue"
                 android:textStyle="bold" />
-
             <TextView
                 android:id="@+id/nama_dosen_wali"
                 android:layout_width="wrap_content"
@@ -135,7 +121,6 @@
             android:layout_marginEnd="30dp"
             android:background="@drawable/button_backgroud"
             android:orientation="vertical">
-
             <TextView
                 android:id="@+id/ganti_password"
                 android:layout_width="match_parent"
@@ -200,6 +185,5 @@
             android:drawablePadding="5dp"
             android:textColor="@color/cerah"
             tools:ignore="RtlCompat" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

@@ -1,20 +1,25 @@
-package com.example.aplikasiabsensi;
+package com.example.aplikasiabsensi.MainActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.example.aplikasiabsensi.R;
+import com.example.aplikasiabsensi.fragment.editProfile;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-import fragment.beranda_fragment;
-import fragment.notification_fragment;
-import fragment.profile_fragment;
+import com.example.aplikasiabsensi.fragment.beranda_fragment;
+import com.example.aplikasiabsensi.fragment.notification_fragment;
+import com.example.aplikasiabsensi.fragment.profile_fragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
@@ -23,11 +28,22 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+//
+//        setContenView(R.layout.fragment_profile_fragment);
+//
+//        ImageView btn= findViewById(R.id.foto_profil);
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(profile_fragment.this, editProfile.class));
+//            }
+//        });
 
         loadFragment(new beranda_fragment());
         BottomNavigationView navigationView= findViewById(R.id.navigation);
         navigationView.setOnItemSelectedListener(this);
         navigationView.setSelectedItemId(R.id.fr_beranda);
+
     }
 
     private boolean loadFragment(Fragment fragment){
