@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1090385341115",
+    "project_id": "aplikasi-absensi-e3b86",
+    "storage_bucket": "aplikasi-absensi-e3b86.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090385341115:android:834e40af287faa95cd179e",
+        "android_client_info": {
+          "package_name": "com.aldorayhanr.aplikasiabsensi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9gJnpl9VZW3IpmafHrO_Ogn-tkqLNdhk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
