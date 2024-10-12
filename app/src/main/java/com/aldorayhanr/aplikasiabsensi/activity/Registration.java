@@ -1,6 +1,5 @@
-package com.aldorayhanr.aplikasiabsensi;
+package com.aldorayhanr.aplikasiabsensi.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,12 +11,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
+import com.aldorayhanr.aplikasiabsensi.R;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -31,12 +27,12 @@ import java.util.Map;
 
 public class Registration extends AppCompatActivity {
 
-    TextInputEditText textInputEditTextNim, textInputEditTextNama, textInputEditTextPassword;
+    TextInputEditText textInputEditTextNim, textInputEditTextNama, textInputEditTextPassword, textInputEditTextProgram_Studi, textInputEditTextSemester, textInputEditTextEmail, textInputEditTextNo_Telp;
     Button buttonSubmit;
-    String nim, nama, password, selectedProgramStudi;
+    String nim, nama, password, programstudi, semester, email, no_telp, selectedjenis_kelamin;
     TextView textViewError;
     ProgressBar progressBar;
-    Spinner spinnerprogram_studi;
+    Spinner spinnerjenis_kelamin;
 
 
     @Override
@@ -47,33 +43,37 @@ public class Registration extends AppCompatActivity {
         textInputEditTextNim = findViewById(R.id.nim);
         textInputEditTextNama = findViewById(R.id.nama);
         textInputEditTextPassword = findViewById(R.id.password);
+        textInputEditTextProgram_Studi = findViewById(R.id.prodi);
+        textInputEditTextSemester = findViewById(R.id.semester);
+        textInputEditTextEmail = findViewById(R.id.email);
+        textInputEditTextNo_Telp = findViewById(R.id.no_telp);
         buttonSubmit = findViewById(R.id.submit);
         textViewError = findViewById(R.id.error);
         progressBar = findViewById(R.id.loading);
-        spinnerprogram_studi = findViewById(R.id.prodi_spinner);
+        spinnerjenis_kelamin = findViewById(R.id.jenis_kelamin);
 
 
         // Create an ArrayAdapter using the string array and a default spinner layout.
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
-                R.array.prodi_spinner,
+                R.array.spinnerjenis_kelamin,
                 android.R.layout.simple_spinner_item
         );
 // Specify the layout to use when the list of choices appears.
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner.
-        spinnerprogram_studi.setAdapter(adapter);
+        spinnerjenis_kelamin.setAdapter(adapter);
 
-        spinnerprogram_studi.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-        public void onItemSelected(AdapterView<?> parent, View view,
-        int pos, long id) {
-            // An item is selected. You can retrieve the selected item using
-            selectedProgramStudi = parent.getItemAtPosition(pos).toString();
-        }
+        spinnerjenis_kelamin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int pos, long id) {
+                // An item is selected. You can retrieve the selected item using
+                selectedjenis_kelamin = parent.getItemAtPosition(pos).toString();
+            }
 
-        public void onNothingSelected(AdapterView<?> parent) {
-            // Another interface callback.
-        }
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Another interface callback.
+            }
         });
 
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
@@ -84,21 +84,26 @@ public class Registration extends AppCompatActivity {
                 nim = String.valueOf(textInputEditTextNim.getText());
                 nama = String.valueOf(textInputEditTextNama.getText());
                 password = String.valueOf(textInputEditTextPassword.getText());
+                programstudi = String.valueOf(textInputEditTextProgram_Studi.getText());
+                semester = String.valueOf(textInputEditTextSemester.getText());
+                email = String.valueOf(textInputEditTextEmail.getText());
+                no_telp = String.valueOf(textInputEditTextNo_Telp.getText());
+                selectedjenis_kelamin = String.valueOf(spinnerjenis_kelamin.getSelectedItem());
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url ="http://192.168.18.12/LoginRegister/login-registration-android/register.php";
+                String url = "http://192.168.18.12/LoginRegister/login-registration-android/register.php";
+
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
                                 progressBar.setVisibility(View.GONE);
-                                if (response.equals("success")){
+                                if (response.equals("success")) {
                                     Toast.makeText(getApplicationContext(), "Registrations Sucessfull", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(getApplicationContext(), Login.class);
                                     startActivity(intent);
                                     finish();
-                                }
-                                else {
+                                } else {
                                     textViewError.setText(response);
                                     textViewError.setVisibility(View.VISIBLE);
                                 }
@@ -110,20 +115,23 @@ public class Registration extends AppCompatActivity {
                         textViewError.setText(error.getLocalizedMessage());
                         textViewError.setVisibility(View.VISIBLE);
                     }
-                }){
-                    protected Map<String, String> getParams(){
+                }) {
+                    protected Map<String, String> getParams() {
                         Map<String, String> paramV = new HashMap<>();
                         paramV.put("nim", nim);
                         paramV.put("nama", nama);
                         paramV.put("password", password);
-                        paramV.put("program_studi", selectedProgramStudi);
+                        paramV.put("program_studi", programstudi);
+                        paramV.put("semester", semester);
+                        paramV.put("jenis_kelamin", selectedjenis_kelamin);
+                        paramV.put("email", email);
+                        paramV.put("no_telp", no_telp);
                         return paramV;
                     }
                 };
                 queue.add(stringRequest);
             }
         });
-
-
     }
 }
+

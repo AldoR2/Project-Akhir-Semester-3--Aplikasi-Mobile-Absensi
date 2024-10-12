@@ -1,20 +1,17 @@
-package com.aldorayhanr.aplikasiabsensi;
+package com.aldorayhanr.aplikasiabsensi.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
+import com.aldorayhanr.aplikasiabsensi.R;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -32,9 +29,9 @@ import java.util.Map;
 public class Login extends AppCompatActivity {
 
     TextView textViewRegisterNow;
-    TextInputEditText textInputEditTextNim, textInputEditTextPassword;
+    TextInputEditText textInputEditTextNimNip, textInputEditTextPassword;
     Button buttonSubmit;
-    String nim, nama, password;
+    String nipNim, nama, password;
     TextView textViewError;
     ProgressBar progressBar;
     SharedPreferences sharedPreferences;
@@ -44,13 +41,14 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         textViewRegisterNow = findViewById(R.id.registerNow);
-        textInputEditTextNim = findViewById(R.id.nim);
+        textInputEditTextNimNip = findViewById(R.id.nim_nip);
         textInputEditTextPassword = findViewById(R.id.password);
         buttonSubmit = findViewById(R.id.submit);
         textViewError = findViewById(R.id.error);
         progressBar = findViewById(R.id.loading);
-        sharedPreferences = getSharedPreferences("MyAppName", MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("Preferences", MODE_PRIVATE);
 
+//        Cek apakah sudah login
         if(sharedPreferences.getString("logged", "false").equals("true")){
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
@@ -62,59 +60,29 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 textViewError.setVisibility(View.GONE);
                 progressBar.setVisibility(View.VISIBLE);
-                nim = String.valueOf(textInputEditTextNim.getText());
-                password = String.valueOf(textInputEditTextPassword.getText());
+                nipNim = textInputEditTextNimNip.getText().toString().trim();
+                password = textInputEditTextPassword.getText().toString().trim();
+
+                if (nipNim.isEmpty() || nipNim.length() < 8) {
+                    textViewError.setText("Masukkan NIP atau NIm yang valid");
+                    progressBar.setVisibility(View.GONE);
+                    return;
+                }
+
+                if (password.isEmpty()) {
+                    textViewError.setText("Masukkan password");
+                    textViewError.setVisibility(View.VISIBLE);
+                    progressBar.setVisibility(View.GONE);
+                    return;
+                }
+
+                //Menentukan role berdasarkan panjang input username
+                String role = nipNim.length() >= 10 ? "dosen" : "mahasiswa";
+
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url ="http://192.168.18.12/LoginRegister/login-registration-android/login.php";
 
-                StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                        new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response) {
-                                progressBar.setVisibility(View.GONE);
-                                try {
-                                    JSONObject jsonObject = new JSONObject(response);
-                                    String status = jsonObject.getString("status");
-                                    String message = jsonObject.getString("message");
-                                    if (status.equals("success")){
-                                        nim = jsonObject.getString("nim");
-                                        nama = jsonObject.getString("nama");
-
-                                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                                        editor.putString("logged", "true");
-                                        editor.putString("nim", nim);
-                                        editor.putString("nama", nama);
-                                        editor.apply();
-                                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                        startActivity(intent);
-                                        finish();
-
-                                    } else {
-                                        textViewError.setText(message);
-                                        textViewError.setVisibility(View.VISIBLE);
-                                    }
-
-                                } catch (JSONException e) {
-                                    textViewError.setText("Error in parsing response. Please try again.");
-                                    textViewError.setVisibility(View.VISIBLE);
-                                }
-                            }
-                        }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        progressBar.setVisibility(View.GONE);
-                        textViewError.setText(error.getLocalizedMessage());
-                        textViewError.setVisibility(View.VISIBLE);
-                    }
-                }){
-                    protected Map<String, String> getParams(){
-                        Map<String, String> paramV = new HashMap<>();
-                        paramV.put("nim", nim);
-                        paramV.put("password", password);
-                        return paramV;
-                    }
-                };
-                queue.add(stringRequest);
+//              Mengecek Login sesuai role
+                cekLogin(queue, role);
             }
         });
 
@@ -127,4 +95,84 @@ public class Login extends AppCompatActivity {
             }
         });
     }
+
+                private void cekLogin(RequestQueue queue, String role) {
+
+                String url ="http://192.168.18.12/LoginRegister/login-registration-android/login.php";
+
+                StringRequest loginRequest = new StringRequest(Request.Method.POST, url,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                progressBar.setVisibility(View.GONE);
+                                Log.d("RawResponse", response); // Menampilkan respons mentah di Logcat
+
+                                try {
+                                    JSONObject jsonObject = new JSONObject(response);
+                                    String status = jsonObject.getString("status");
+                                    String message = jsonObject.getString("message");
+
+                                    if (status.equals("success")){
+//                                        Login Berhasil
+                                        if(role.equals("dosen")) {
+                                            nipNim = jsonObject.getString("nip");
+                                        } else {
+                                            nipNim = jsonObject.getString("nim");
+                                        }
+                                        nama = jsonObject.getString("nama");
+
+
+//                                        Simpan Data Login di SharedPreferences
+                                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                                        editor.putString("logged", "true");
+                                        if (role.equals("dosen")) {
+                                            editor.putString("nip", nipNim);
+                                        } else {
+                                            editor.putString("nim", nipNim);
+                                        }
+                                        editor.putString("nama", nama);
+                                        editor.apply();
+
+//                                        Maka Pindah ke MainActivity
+                                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                        startActivity(intent);
+                                        finish();
+
+                                    } else {
+//                                        Jika Tetap gagal maka akan menampilkan pesan error
+                                        textViewError.setText(message);
+                                        textViewError.setVisibility(View.VISIBLE);
+                                    }
+
+                                } catch (JSONException e) {
+                                    textViewError.setText("Error in parsing response. Please try again.");
+                                    textViewError.setVisibility(View.VISIBLE);
+                                }
+
+                            }
+                        }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        progressBar.setVisibility(View.GONE);
+                        textViewError.setText("Error: " + error.getLocalizedMessage());
+                        textViewError.setVisibility(View.VISIBLE);
+                    }
+                }){
+                    protected Map<String, String> getParams(){
+                        Map<String, String> paramV = new HashMap<>();
+                        if (role.equals("dosen")) {
+                            paramV.put("nip", nipNim);  // Kirim NIP untuk dosen
+                        } else {
+                            paramV.put("nim", nipNim);  // Kirim NIM untuk mahasiswa
+                        }
+
+                        paramV.put("password", password);
+                        paramV.put("role", role);
+                        return paramV;
+                    }
+                };
+                queue.add(loginRequest);
+            }
+
+
 }

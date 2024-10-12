@@ -19,12 +19,17 @@
     <string name="click_here_to_register">Click Here to Register</string>
     <string name="enter_username">Enter Username</string>
     <string name="enter_nim">Enter Nim</string>
+    <string name="pilih_program_studi">Pilih Program Studi</string>
+    <string name="pilih_kelas">Pilihlah Kelas</string>
     <string name="enter_nama">Enter Nama</string>
     <string name="nim">Nim</string>
-    <string-array name="prodi_spinner">
-        <item>tkk</item>
-        <item>tif</item>
-        <item>mif</item>
-        <item>bsd</item>
+    <string name="enter_program_studi">Enter Program Studi</string>
+    <string name="enter_semester">Enter Semester</string>
+    <string name="enter_no_telp">Enter No Telp</string>
+    <string-array name="spinnerjenis_kelamin">
+        <item>laki_laki</item>
+        <item>perempuan</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
