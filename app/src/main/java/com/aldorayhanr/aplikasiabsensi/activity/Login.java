@@ -33,8 +33,6 @@ public class Login extends AppCompatActivity {
     EditText textInputEditTextNimNip, textInputEditTextPassword;
     Button buttonSubmit;
     String nipNim, nama, password;
-    TextView textViewError;
-    ProgressBar progressBar;
     SharedPreferences sharedPreferences;
 
     @Override
@@ -57,21 +55,16 @@ public class Login extends AppCompatActivity {
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                textViewError.setVisibility(View.GONE);
-//                progressBar.setVisibility(View.VISIBLE);
+
                 nipNim = textInputEditTextNimNip.getText().toString().trim();
                 password = textInputEditTextPassword.getText().toString().trim();
 
                 if (nipNim.isEmpty() || nipNim.length() < 8) {
-                    textViewError.setText("Masukkan NIP atau NIm yang valid");
-                    progressBar.setVisibility(View.GONE);
                     return;
                 }
 
                 if (password.isEmpty()) {
-                    textViewError.setText("Masukkan password");
-                    textViewError.setVisibility(View.VISIBLE);
-                    progressBar.setVisibility(View.GONE);
+
                     return;
                 }
 
@@ -103,7 +96,7 @@ public class Login extends AppCompatActivity {
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
-                                progressBar.setVisibility(View.GONE);
+
                                 Log.d("RawResponse", response); // Menampilkan respons mentah di Logcat
 
                                 try {
@@ -139,22 +132,18 @@ public class Login extends AppCompatActivity {
 
                                     } else {
 //                                        Jika Tetap gagal maka akan menampilkan pesan error
-                                        textViewError.setText(message);
-                                        textViewError.setVisibility(View.VISIBLE);
+
                                     }
 
                                 } catch (JSONException e) {
-                                    textViewError.setText("Error in parsing response. Please try again.");
-                                    textViewError.setVisibility(View.VISIBLE);
+
                                 }
 
                             }
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        progressBar.setVisibility(View.GONE);
-                        textViewError.setText("Error: " + error.getLocalizedMessage());
-                        textViewError.setVisibility(View.VISIBLE);
+
                     }
                 }){
                     protected Map<String, String> getParams(){
