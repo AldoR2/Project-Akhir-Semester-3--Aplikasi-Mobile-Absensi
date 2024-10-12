@@ -90,7 +90,6 @@ public class Registration extends AppCompatActivity {
                 no_telp = String.valueOf(textInputEditTextNo_Telp.getText());
                 selectedjenis_kelamin = String.valueOf(spinnerjenis_kelamin.getSelectedItem());
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url = "http://192.168.0.23/LoginRegister/login-registration-android/register.php";
 
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,

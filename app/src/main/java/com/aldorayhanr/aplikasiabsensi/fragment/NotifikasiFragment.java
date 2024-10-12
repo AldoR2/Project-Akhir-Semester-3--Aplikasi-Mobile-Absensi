@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 
 import com.aldorayhanr.aplikasiabsensi.R;
 
-
 public class NotifikasiFragment extends Fragment {
 
     public NotifikasiFragment() {
@@ -22,7 +21,6 @@ public class NotifikasiFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
