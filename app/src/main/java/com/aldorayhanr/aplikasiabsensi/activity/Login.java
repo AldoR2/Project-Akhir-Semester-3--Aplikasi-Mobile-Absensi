@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -29,6 +30,7 @@ import java.util.Map;
 public class Login extends AppCompatActivity {
 
     TextView textViewRegisterNow;
+    EditText textInputEditTextNimNip, textInputEditTextPassword;
     Button buttonSubmit;
     String nipNim, nama, password;
     TextView textViewError;
@@ -55,6 +57,8 @@ public class Login extends AppCompatActivity {
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                textViewError.setVisibility(View.GONE);
+//                progressBar.setVisibility(View.VISIBLE);
                 nipNim = textInputEditTextNimNip.getText().toString().trim();
                 password = textInputEditTextPassword.getText().toString().trim();
 
@@ -93,6 +97,7 @@ public class Login extends AppCompatActivity {
 
                 private void cekLogin(RequestQueue queue, String role) {
 
+                String url ="http://192.168.0.23/LoginRegister/login-registration-android/login.php";
 
                 StringRequest loginRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {

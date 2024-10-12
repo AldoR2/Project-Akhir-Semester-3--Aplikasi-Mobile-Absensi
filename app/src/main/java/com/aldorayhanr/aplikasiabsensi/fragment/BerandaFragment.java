@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.aldorayhanr.aplikasiabsensi.R;
 
+
 public class BerandaFragment extends Fragment {
 
     public BerandaFragment() {
@@ -20,6 +21,7 @@ public class BerandaFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
