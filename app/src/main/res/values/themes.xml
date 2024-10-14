@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Minggu7" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item> <!-- Untuk membuat icon status bar tetap terlihat jelas jika status bar transparan -->
+    </style>
+
+    <style name="Theme.Minggu7" parent="Base.Theme.Minggu7" />
+</resources>
