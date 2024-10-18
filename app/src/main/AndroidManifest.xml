@@ -13,6 +13,30 @@
         android:theme="@style/Theme.Minggu7"
         tools:targetApi="31">
         <activity
+            android:name=".CekMateriActivity"
+            android:exported="false" />
+        <activity
+            android:name=".KalenderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".KehadiranActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NotifikasiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewProfile"
+            android:exported="false" />
+        <activity
+            android:name=".EditProfile"
+            android:exported="false" />
+        <activity
+            android:name=".ViewAllSchedule"
+            android:exported="false" />
+        <activity
+            android:name=".DetailJadwal"
+            android:exported="false" />
+        <activity
             android:name=".ChangePasswordActivity"
             android:exported="false" />
         <activity

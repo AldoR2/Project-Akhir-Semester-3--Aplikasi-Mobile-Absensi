@@ -68,10 +68,9 @@ public class MainActivity2 extends AppCompatActivity implements NavigationBarVie
     public boolean onNavigationItemSelected (@NonNull MenuItem item){
         int selected = item.getItemId();
         Fragment fragment = null;
+
         if (selected == R.id.fr_beranda) {
             fragment = new BerandaFragment();
-        } else if (selected == R.id.fr_notifikasi) {
-            fragment = new NotifikasiFragment();
         } else if (selected == R.id.fr_profil) {
             fragment = new ProfilFragment();
         }

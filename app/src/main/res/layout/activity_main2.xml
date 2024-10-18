@@ -20,7 +20,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:id="@+id/navigation"
-        app:itemRippleColor="#FFF6F6"
+        app:itemRippleColor="#F6F8FF"
         app:itemTextColor="@color/gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

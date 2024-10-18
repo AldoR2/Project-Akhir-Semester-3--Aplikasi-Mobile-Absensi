@@ -60,6 +60,7 @@
                         android:gravity="center_vertical"/>
 
                     <ImageView
+                        android:id="@+id/notifikasi"
                         android:layout_width="20dp"
                         android:layout_height="match_parent"
                         android:src="@drawable/notifikasi"
@@ -138,6 +139,7 @@
                     android:layout_marginRight="20dp">
 
                     <ImageView
+                        android:id="@+id/kehadiran"
                         android:layout_width="wrap_content"
                         android:layout_height="60dp"
                         android:adjustViewBounds="true"
@@ -167,6 +169,7 @@
                     android:layout_marginRight="20dp">
 
                     <ImageView
+                        android:id="@+id/kalender"
                         android:layout_width="wrap_content"
                         android:layout_height="60dp"
                         android:adjustViewBounds="true"
@@ -196,20 +199,21 @@
                     android:layout_marginRight="20dp">
 
                     <ImageView
+                        android:id="@+id/materi"
                         android:layout_width="wrap_content"
                         android:layout_height="60dp"
                         android:adjustViewBounds="true"
                         android:scaleType="centerInside"
-                        android:src="@drawable/attendance"
+                        android:src="@drawable/ic_book"
                         android:background="@drawable/bg_fitur"
                         android:layout_gravity="center"
                         android:padding="15dp"
-                        />
+                        app:tint="@color/white" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Kehadiran"
+                        android:text="Cek Materi"
                         android:layout_marginTop="3dp"
                         android:textSize="12sp"
                         android:fontFamily="@font/poppinssemibold"
@@ -236,6 +240,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/allschedule"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="130dp"
@@ -304,6 +309,7 @@
                             android:fontFamily="@font/poppinsmedium"/>
 
                         <TextView
+                            android:id="@+id/jadwal1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="-40dp"
@@ -410,6 +416,7 @@
                             android:fontFamily="@font/poppinsmedium"/>
 
                         <TextView
+                            android:id="@+id/jadwal2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="-40dp"
@@ -492,7 +499,10 @@
                     android:id="@+id/lesson3"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    android:layout_margin="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="30dp"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="5dp"
                     app:cardUseCompatPadding="true">
@@ -516,6 +526,7 @@
                             android:fontFamily="@font/poppinsmedium"/>
 
                         <TextView
+                            android:id="@+id/jadwal3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="-40dp"

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".DetailJadwal">
+
+    <TextView
+        android:id="@+id/tvDetailJadwal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Detail Jadwal Mata Kuliah"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingBottom="8dp" />
+
+    <TextView
+        android:id="@+id/tvHari"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hari: Senin"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvJam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jam: 08:00 - 10:00"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvMataKuliah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mata Kuliah: Pemrograman Android"
+        android:textSize="16sp" />
+</LinearLayout>

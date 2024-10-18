@@ -86,7 +86,7 @@
             android:background="@drawable/button_shape"
             android:backgroundTint="@color/white"
             android:fontFamily="@font/poppinsregular"
-            android:hint=" Password"
+            android:hint="Password"
             android:padding="10dp"
             android:drawableStart="@drawable/ic_password"
             android:drawablePadding="12dp"

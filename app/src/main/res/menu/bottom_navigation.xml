@@ -6,10 +6,6 @@
         android:icon="@drawable/home"
         android:title="Home"/>
     <item
-        android:id="@+id/fr_notifikasi"
-        android:icon="@drawable/notifikasi"
-        android:title="Home"/>
-    <item
         android:id="@+id/fr_profil"
         android:icon="@drawable/user"
         android:title="Account"/>
