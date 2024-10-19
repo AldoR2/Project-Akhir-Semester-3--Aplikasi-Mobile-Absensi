@@ -1,11 +1,19 @@
 package com.aldorayhanr.aplikasiabsensi.activity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -27,12 +35,11 @@ import java.util.Map;
 
 public class Registration extends AppCompatActivity {
 
-    TextInputEditText textInputEditTextNim, textInputEditTextNama, textInputEditTextPassword, textInputEditTextProgram_Studi, textInputEditTextSemester, textInputEditTextEmail, textInputEditTextNo_Telp;
-    Button buttonSubmit;
-    String nim, nama, password, programstudi, semester, email, no_telp, selectedjenis_kelamin;
-    TextView textViewError;
-    ProgressBar progressBar;
-    Spinner spinnerjenis_kelamin;
+    private EditText ETNim, ETNama, ETPassword, ETConfirm_Password, ETProgram_Studi, ETSemester, ETEmail, ETNo_Telp;
+    private TextView tvLogin;
+    private Button buttonSubmit;
+    private String nim, nama, password, programstudi, semester, email, no_telp, selectedjenis_kelamin;
+    private AutoCompleteTextView TVJenis_kelamin;
 
 
     @Override
@@ -40,80 +47,74 @@ public class Registration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-        textInputEditTextNim = findViewById(R.id.nim);
-        textInputEditTextNama = findViewById(R.id.nama);
-        textInputEditTextPassword = findViewById(R.id.password);
-        textInputEditTextProgram_Studi = findViewById(R.id.prodi);
-        textInputEditTextSemester = findViewById(R.id.semester);
-        textInputEditTextEmail = findViewById(R.id.email);
-        textInputEditTextNo_Telp = findViewById(R.id.no_telp);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            window.setStatusBarColor(Color.TRANSPARENT);  // Menghilangkan warna status bar
+        }
+
+
+        ETNim = findViewById(R.id.nim);
+        ETNama = findViewById(R.id.nama);
+        ETPassword = findViewById(R.id.password);
+        ETConfirm_Password = findViewById(R.id.confirmpassword);
+        ETProgram_Studi = findViewById(R.id.prodi);
+        ETSemester = findViewById(R.id.semester);
+        ETEmail = findViewById(R.id.email);
+        ETNo_Telp = findViewById(R.id.no_telp);
+        tvLogin = findViewById(R.id.tvLogin);
         buttonSubmit = findViewById(R.id.submit);
-        textViewError = findViewById(R.id.error);
-        progressBar = findViewById(R.id.loading);
-        spinnerjenis_kelamin = findViewById(R.id.jenis_kelamin);
+        TVJenis_kelamin = findViewById(R.id.jenis_kelamin);
 
-
-        // Create an ArrayAdapter using the string array and a default spinner layout.
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this,
-                R.array.spinnerjenis_kelamin,
-                android.R.layout.simple_spinner_item
-        );
-// Specify the layout to use when the list of choices appears.
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner.
-        spinnerjenis_kelamin.setAdapter(adapter);
-
-        spinnerjenis_kelamin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int pos, long id) {
-                // An item is selected. You can retrieve the selected item using
-                selectedjenis_kelamin = parent.getItemAtPosition(pos).toString();
-            }
-
-            public void onNothingSelected(AdapterView<?> parent) {
-                // Another interface callback.
+        tvLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Registration.this, Login.class);
+                startActivity(intent);
             }
         });
 
+
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
+            @Override 
             public void onClick(View v) {
-                textViewError.setVisibility(View.GONE);
-                progressBar.setVisibility(View.VISIBLE);
-                nim = String.valueOf(textInputEditTextNim.getText());
-                nama = String.valueOf(textInputEditTextNama.getText());
-                password = String.valueOf(textInputEditTextPassword.getText());
-                programstudi = String.valueOf(textInputEditTextProgram_Studi.getText());
-                semester = String.valueOf(textInputEditTextSemester.getText());
-                email = String.valueOf(textInputEditTextEmail.getText());
-                no_telp = String.valueOf(textInputEditTextNo_Telp.getText());
-                selectedjenis_kelamin = String.valueOf(spinnerjenis_kelamin.getSelectedItem());
+                nim = String.valueOf(ETNim.getText());
+                nama = String.valueOf(ETNama.getText());
+                String password = ETPassword.getText().toString().trim(); // Use a local variable for password
+                String confirmation = ETConfirm_Password.getText().toString().trim(); // Get confirmation password
+                programstudi = String.valueOf(ETProgram_Studi.getText());
+                semester = String.valueOf(ETSemester.getText());
+                email = String.valueOf(ETEmail.getText());
+                no_telp = String.valueOf(ETNo_Telp.getText());
+                selectedjenis_kelamin = String.valueOf(TVJenis_kelamin.getText());
+
+                // Validate password confirmation
+                if (!password.equals(confirmation)) {
+                    Toast.makeText(getApplicationContext(), "Passwords do not match", Toast.LENGTH_SHORT).show();
+                    return; // Exit the onClick method early
+                }
+
                 RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                String url = "http://192.168.0.23/LoginRegister/login-registration-android/register.php";
+                String url = "http://192.168.0.10/LoginRegister/login-registration-android/register.php";
 
 
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
-                                progressBar.setVisibility(View.GONE);
                                 if (response.equals("success")) {
                                     Toast.makeText(getApplicationContext(), "Registrations Sucessfull", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(getApplicationContext(), Login.class);
                                     startActivity(intent);
                                     finish();
                                 } else {
-                                    textViewError.setText(response);
-                                    textViewError.setVisibility(View.VISIBLE);
+
                                 }
                             }
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        progressBar.setVisibility(View.VISIBLE);
-                        textViewError.setText(error.getLocalizedMessage());
-                        textViewError.setVisibility(View.VISIBLE);
+
                     }
                 }) {
                     protected Map<String, String> getParams() {
@@ -129,9 +130,59 @@ public class Registration extends AppCompatActivity {
                         return paramV;
                     }
                 };
+
                 queue.add(stringRequest);
             }
         });
+
+        // AutoCompleteTextView pertama
+        AutoCompleteTextView autoCompleteProdi = findViewById(R.id.prodi);
+
+        // Daftar item untuk dropdown pertama (Program Studi)
+        String[] prodiItems = {"Teknologi Informasi", "Peternakan", "Pertanian", "Teknik"};
+
+        // Membuat adapter untuk dropdown pertama
+        ArrayAdapter<String> prodiAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, prodiItems);
+
+        // Mengatur adapter ke AutoCompleteTextView pertama
+        autoCompleteProdi.setAdapter(prodiAdapter);
+
+        // Mengatur offset vertikal dan lebar untuk dropdown pertama
+        autoCompleteProdi.setDropDownVerticalOffset(0);
+        autoCompleteProdi.setDropDownWidth(LinearLayout.LayoutParams.MATCH_PARENT);
+
+        // Menampilkan dropdown saat AutoCompleteTextView pertama diklik
+        autoCompleteProdi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                autoCompleteProdi.showDropDown();
+            }
+
+        });
+
+        AutoCompleteTextView autoCompleteJenisKelamin = findViewById(R.id.jenis_kelamin);
+
+        String[] kategoriItems = {"Laki-laki", "Perempuan"};
+
+        ArrayAdapter<String> kategoriAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, kategoriItems);
+
+        autoCompleteJenisKelamin.setAdapter(kategoriAdapter);
+
+        autoCompleteJenisKelamin.setDropDownVerticalOffset(0);
+        autoCompleteJenisKelamin.setDropDownWidth(LinearLayout.LayoutParams.MATCH_PARENT);
+
+        autoCompleteJenisKelamin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                autoCompleteJenisKelamin.showDropDown();
+            }
+        });
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed(); // Kembali ke aktivitas sebelumnya (Login)
     }
 }
 

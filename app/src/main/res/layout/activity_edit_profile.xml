@@ -1,85 +1,210 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
     tools:context=".activity.EditProfile">
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+        android:id="@+id/toplinear"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="50dp"
+        android:background="@drawable/bg_home_wave"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/wkwk"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Bimaa Achmad FIll Ardhi"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="@+id/imageView"
-            app:layout_constraintStart_toStartOf="@+id/imageView"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="match_parent"
             android:src="@drawable/back"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:tint="@color/white"
+            android:layout_marginLeft="20dp"/>
 
         <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:text="E41231099"
-            app:layout_constraintEnd_toEndOf="@+id/textView"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-        <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Edit Profile"
+            android:gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppinssemibold"
+            android:textSize="16sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="375dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/bgmobile_transparent"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="375dp"
+        android:layout_marginTop="425dp"
+        android:background="@drawable/bgmobile_transparent"/>
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/profil"
+        android:layout_marginTop="70dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_dropdown"
+        android:layout_marginTop="480dp"
+        android:layout_marginLeft="300dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_dropdown"
+        android:layout_marginTop="570dp"
+        android:layout_marginLeft="300dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2">
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/poppinssemibold"
+            android:text="Nama Lengkap"
+            android:layout_marginLeft="13dp"
+            />
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Nama Depan" />
+        <EditText
+            android:id="@+id/etNama"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_shape"
+            android:backgroundTint="#200099FF"
+            android:fontFamily="@font/poppinsregular"
+            android:textSize="14sp"
+            android:hint="Nama Lengkap"
+            android:padding="10dp"
+            android:drawableStart="@drawable/ic_user"
+            android:drawablePadding="12dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="15dp"
+            />
 
-            <EditText
-                android:id="@+id/editTextText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="text"
-                android:text="Masukkan Nama Depan"
-                android:textSize="12sp"/>
-        </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/poppinssemibold"
+            android:text="Email"
+            android:layout_marginLeft="13dp"
+            />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_shape"
+            android:backgroundTint="#200099FF"
+            android:fontFamily="@font/poppinsregular"
+            android:hint="Email"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="12dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="15dp"
+            />
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/poppinssemibold"
+            android:text="Nomor Telepon"
+            android:layout_marginLeft="13dp"
+            />
+
+        <EditText
+            android:id="@+id/etNoTelp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_shape"
+            android:backgroundTint="#200099FF"
+            android:fontFamily="@font/poppinsregular"
+            android:hint="Nomor Telepon"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:drawableStart="@drawable/ic_phone"
+            android:drawablePadding="12dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="15dp"
+            android:inputType="number"
+            />
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/poppinssemibold"
+            android:text="Tanggal Lahir"
+            android:layout_marginLeft="13dp"
+            />
+
+        <Button
+            android:id="@+id/btnTanggalLahir"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:backgroundTint="#1A0099FF"
+            android:fontFamily="@font/poppinsregular"
+            android:text="Pilih"
+            android:textColor="@color/black"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="start|center"
+            />
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/poppinssemibold"
+            android:text="Jenis Kelamin"
+            android:layout_marginLeft="13dp"
+            />
+
+        <Spinner
+            android:id="@+id/spinnerJenisKelamin"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_shape"
+            android:backgroundTint="#200099FF"
+            android:fontFamily="@font/poppinsregular"
+            android:padding="10dp"
+            android:layout_marginLeft="50dp"
+            android:drawableEnd="@drawable/ic_dropdown"
+            />
+
+        <Button
+            android:id="@+id/Submit"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:backgroundTint="@color/colorAccent"
+            android:text="Submit"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppinsbold"
+            android:layout_marginTop="30dp"/>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

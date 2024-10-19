@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ViewProfile">
+
+    <LinearLayout
+        android:id="@+id/toplinear"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_home_wave"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/back"
+            app:tint="@color/white"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="View Profile"
+            android:gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppinssemibold"
+            android:textSize="16sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="375dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/bgmobile_transparent"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="375dp"
+        android:layout_marginTop="425dp"
+        android:background="@drawable/bgmobile_transparent"/>
+
+    <ImageView
+        android:id="@+id/profile"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/profil"
+        android:layout_marginTop="70dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true"
+        android:layout_marginTop="180dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <LinearLayout
+                android:id="@+id/LinearLogo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/blue_background_with_radius"
+                android:padding="7dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Biodata"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/poppinssemibold"
+                    android:gravity="center_vertical"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_below="@id/LinearLogo">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Nama"
+                    android:textColor="#002D50"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:layout_marginStart="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="#002D50"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/poppinsmedium"/>
+
+                <TextView
+                    android:id="@+id/nama"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Izzul Islam Ramadhan"
+                    android:textColor="#002D50"
+                    android:textSize="12sp"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/poppinsregular"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearNim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_below="@id/LinearLogo">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="NIM"
+                    android:textColor="#002D50"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:layout_marginStart="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="#002D50"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/poppinsmedium"/>
+
+                <TextView
+                    android:id="@+id/nim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="E41231215"
+                    android:textColor="#002D50"
+                    android:textSize="12sp"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/poppinsregular"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearDob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_marginTop="70dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_below="@id/LinearLogo">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal Lahir"
+                    android:textColor="#002D50"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:layout_marginStart="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="#002D50"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/poppinsmedium"/>
+
+                <TextView
+                    android:id="@+id/dob"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="27 September 2005"
+                    android:textColor="#002D50"
+                    android:textSize="12sp"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/poppinsregular"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearNoTelp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_marginTop="100dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_below="@id/LinearLogo">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Nomor HP"
+                    android:textColor="#002D50"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:layout_marginStart="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="#002D50"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/poppinsmedium"/>
+
+                <TextView
+                    android:id="@+id/no_telp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="089652158822"
+                    android:textColor="#002D50"
+                    android:textSize="12sp"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/poppinsregular"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_marginTop="130dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_below="@id/LinearLogo">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textColor="#002D50"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:layout_marginStart="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="#002D50"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/poppinsmedium"/>
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="izzulramadhan24@gmail.com"
+                    android:textColor="#002D50"
+                    android:textSize="12sp"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/poppinsregular"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearJenisKelamin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_marginTop="160dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_below="@id/LinearLogo">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Jenis Kelamin"
+                    android:textColor="#002D50"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:layout_marginStart="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="#002D50"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/poppinsmedium"/>
+
+                <TextView
+                    android:id="@+id/jenis_kelamin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Laki-laki"
+                    android:textColor="#002D50"
+                    android:textSize="12sp"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/poppinsregular"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearProdi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_marginTop="190dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_below="@id/LinearLogo">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Program Studi"
+                    android:textColor="#002D50"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:layout_marginStart="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="#002D50"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/poppinsmedium"/>
+
+                <TextView
+                    android:id="@+id/prodi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Teknik Informatika"
+                    android:textColor="#002D50"
+                    android:textSize="12sp"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/poppinsregular"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearSemester"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_marginTop="220dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_below="@id/LinearLogo">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Semester"
+                    android:textColor="#002D50"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:layout_marginStart="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="#002D50"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/poppinsmedium"/>
+
+                <TextView
+                    android:id="@+id/semester"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:textColor="#002D50"
+                    android:textSize="12sp"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/poppinsregular"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

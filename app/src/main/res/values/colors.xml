@@ -13,5 +13,6 @@
     <color name="primarycolor">#0693e3</color>
     <color name="redw">#D34141</color>
     <color name="background">#ececec</color>
-
+    <color name="primary">#72b9fd</color>
+    <color name="kolom">#DBDBDB</color>
 </resources>
