@@ -26,21 +26,22 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="55dp"
         android:layout_marginTop="169dp"
+        android:layout_marginStart="55dp"
         android:layout_marginEnd="55dp"
         android:paddingTop="30dp"
         android:src="@drawable/logo" />
 
     <TextView
         android:id="@+id/txt1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/img_2"
-        android:layout_marginLeft="80dp"
         android:fontFamily="@font/poppinsbold"
         android:text="Selamat datang di SIM Online!"
-        android:textSize="16dp" />
+        android:textSize="16dp"
+        android:gravity="center_horizontal"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -100,14 +101,17 @@
             android:fontFamily="@font/poppinsmedium"
             android:text="Lupa Password?"
             android:textColor="@color/primarycolor"
-            android:textSize="14dp" />
+            android:textSize="14dp"
+            android:layout_marginBottom="10dp"/>
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"
             android:backgroundTint="@color/primarycolor"
-            android:text="Login" />
+            android:text="Login"
+            android:fontFamily="@font/poppinsbold"
+            android:textSize="18sp"/>
     </LinearLayout>
         <TextView
             android:id="@+id/txt3"

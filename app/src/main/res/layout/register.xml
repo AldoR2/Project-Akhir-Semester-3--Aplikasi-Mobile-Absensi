@@ -30,24 +30,24 @@
 
     <TextView
         android:id="@+id/txt1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/img_2"
-        android:layout_marginLeft="150dp"
         android:fontFamily="@font/poppinsbold"
         android:text="Register Akun"
-        android:textSize="16dp" />
+        android:textSize="16dp"
+        android:gravity="center_horizontal"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/txt1"
         android:text="Silahkan isi data diri dibawah"
-        android:layout_marginLeft="100dp"
         android:layout_marginTop="10dp"
         android:id="@+id/txt2"
         android:fontFamily="@font/poppinsmedium"
         android:textColor="@color/gray"
+        android:gravity="center_horizontal"
         />
 
     <androidx.core.widget.NestedScrollView
@@ -78,7 +78,8 @@
                 android:padding="10dp"
                 android:drawableStart="@drawable/ic_user"
                 android:drawablePadding="12dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:textSize="16sp"/>
 
             <EditText
                 android:id="@+id/nama"
@@ -91,7 +92,8 @@
                 android:padding="10dp"
                 android:drawableStart="@drawable/ic_user"
                 android:drawablePadding="12dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:textSize="16sp"/>
 
             <AutoCompleteTextView
                 android:id="@+id/prodi"
@@ -107,6 +109,7 @@
                 android:layout_marginBottom="10dp"
                 android:inputType="none"
                 android:focusable="false"
+                android:textSize="16sp"
                 />
 
             <EditText
@@ -120,7 +123,8 @@
                 android:padding="10dp"
                 android:drawableStart="@drawable/ic_prodi"
                 android:drawablePadding="12dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:textSize="16sp"/>
 
             <EditText
                 android:id="@+id/email"
@@ -133,7 +137,8 @@
                 android:padding="10dp"
                 android:drawableStart="@drawable/ic_email"
                 android:drawablePadding="12dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:textSize="16sp"/>
 
             <AutoCompleteTextView
                 android:id="@+id/jeniskelamin"
@@ -149,7 +154,23 @@
                 android:layout_marginBottom="10dp"
                 android:inputType="none"
                 android:focusable="false"
+                android:textSize="16sp"
                 />
+
+            <EditText
+                android:id="@+id/dob"
+                android:layout_width="280dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_shape"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/poppinsregular"
+                android:hint="TTL"
+                android:padding="10dp"
+                android:drawableStart="@drawable/ic_date"
+                android:drawableTint="@color/gray"
+                android:drawablePadding="12dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="16sp"/>
 
             <EditText
                 android:id="@+id/telNo"
@@ -163,7 +184,26 @@
                 android:drawableStart="@drawable/ic_phone"
                 android:drawablePadding="12dp"
                 android:layout_marginBottom="10dp"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/alamat"
+                android:layout_width="280dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_shape"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/poppinsregular"
+                android:hint="Alamat Domisili"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingEnd="10dp"
+                android:paddingStart="15dp"
+                android:drawableStart="@drawable/ic_location"
+                android:drawableTint="@color/gray"
+                android:drawablePadding="15dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="16sp"/>
 
             <EditText
                 android:id="@+id/password"
@@ -177,7 +217,8 @@
                 android:drawableStart="@drawable/ic_password"
                 android:drawablePadding="12dp"
                 android:layout_marginBottom="10dp"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword"
+                android:textSize="16sp"/>
 
             <EditText
                 android:id="@+id/confirmpassword"
@@ -191,19 +232,22 @@
                 android:drawableStart="@drawable/ic_password"
                 android:drawablePadding="12dp"
                 android:layout_marginBottom="10dp"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword"
+                android:textSize="16sp"/>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
     <Button
         android:id="@+id/btnSubmit"
-        android:layout_width="300dp"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
         android:backgroundTint="@color/primarycolor"
         android:text="Submit"
         android:layout_below="@id/inputregister"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:fontFamily="@font/poppinsbold"
+        android:textSize="18sp"/>
     <TextView
         android:id="@+id/txt3"
         android:layout_width="wrap_content"

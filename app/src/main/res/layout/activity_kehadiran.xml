@@ -16,6 +16,7 @@
         tools:ignore="MissingConstraints">
 
         <ImageView
+            android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:src="@drawable/back"
@@ -34,13 +35,44 @@
             />
     </LinearLayout>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Oops! System Error"
-        android:fontFamily="@font/poppinsbold"
-        android:textSize="24sp"
-        tools:ignore="MissingConstraints" />
+        android:layout_height="375dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/bgmobile_transparent"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="375dp"
+        android:layout_marginTop="425dp"
+        android:background="@drawable/bgmobile_transparent"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true"
+        android:layout_marginTop="70dp"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_cardview"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

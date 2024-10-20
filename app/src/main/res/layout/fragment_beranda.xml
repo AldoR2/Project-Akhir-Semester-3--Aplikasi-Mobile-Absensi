@@ -220,6 +220,38 @@
                         android:textColor="@color/black"
                         android:gravity="center_horizontal"/>
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="20dp">
+
+                    <ImageView
+                        android:id="@+id/presensi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_presensi"
+                        android:background="@drawable/bg_fitur"
+                        android:layout_gravity="center"
+                        android:padding="15dp"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Presensi"
+                        android:layout_marginTop="3dp"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/poppinssemibold"
+                        android:textColor="@color/black"
+                        android:gravity="center_horizontal"
+                        android:paddingStart="3dp"/>
+                </LinearLayout>
+
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -283,7 +315,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/lesson1"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="180dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
@@ -300,20 +332,19 @@
                         <TextView
                             android:layout_width="160dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="115dp"
+                            android:layout_marginStart="110dp"
                             android:layout_marginTop="10dp"
                             android:text="Pemrograman Dasar"
                             android:textColor="@color/white"
                             android:textSize="16sp"
-
                             android:fontFamily="@font/poppinsmedium"/>
 
                         <TextView
                             android:id="@+id/jadwal1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="-40dp"
-                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="-55dp"
+                            android:layout_marginLeft="10dp"
                             android:background="@drawable/bg_rounded_trans"
                             android:backgroundTint="@color/white"
                             android:backgroundTintMode="add"
@@ -327,10 +358,70 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="130dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_gravity="center_horizontal">
+
+                        <TextView
+                            android:id="@+id/tvPresensi1"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_trans"
+                            android:backgroundTint="#00FFFFFF"
+                            android:backgroundTintMode="add"
+                            android:padding="3dp"
+                            android:text="Presensi"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center"
+                            />
+
+                        <TextView
+                            android:id="@+id/tvZoom1"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_trans"
+                            android:backgroundTint="#00FFFFFF"
+                            android:backgroundTintMode="add"
+                            android:padding="3dp"
+                            android:text="Zoom"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center"
+                            android:layout_marginLeft="10dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/tvMateri1"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_trans"
+                            android:backgroundTint="#00FFFFFF"
+                            android:backgroundTintMode="add"
+                            android:padding="3dp"
+                            android:text="Materi"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center"
+                            android:layout_marginLeft="10dp"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="150dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center_vertical|center_horizontal"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginLeft="7dp"
                         android:orientation="vertical">
 
@@ -363,7 +454,7 @@
 
                     <ImageView
                         android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_height="match_parent"
                         android:layout_gravity="start|center"
                         android:padding="15dp"
                         android:layout_marginLeft="10dp"
@@ -390,7 +481,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/lesson2"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="180dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
@@ -407,20 +498,19 @@
                         <TextView
                             android:layout_width="160dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="115dp"
+                            android:layout_marginStart="110dp"
                             android:layout_marginTop="10dp"
                             android:text="Konsep Basis Data"
                             android:textColor="@color/white"
                             android:textSize="16sp"
-                            android:textStyle="bold"
                             android:fontFamily="@font/poppinsmedium"/>
 
                         <TextView
                             android:id="@+id/jadwal2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="-40dp"
-                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="-55dp"
+                            android:layout_marginLeft="10dp"
                             android:background="@drawable/bg_rounded_trans"
                             android:backgroundTint="@color/white"
                             android:backgroundTintMode="add"
@@ -435,10 +525,70 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="130dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_gravity="center_horizontal">
+
+                        <TextView
+                            android:id="@+id/tvPresensi2"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_trans"
+                            android:backgroundTint="#00FFFFFF"
+                            android:backgroundTintMode="add"
+                            android:padding="3dp"
+                            android:text="Presensi"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center"
+                            />
+
+                        <TextView
+                            android:id="@+id/tvZoom2"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_trans"
+                            android:backgroundTint="#00FFFFFF"
+                            android:backgroundTintMode="add"
+                            android:padding="3dp"
+                            android:text="Zoom"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center"
+                            android:layout_marginLeft="10dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/tvMateri2"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_trans"
+                            android:backgroundTint="#00FFFFFF"
+                            android:backgroundTintMode="add"
+                            android:padding="3dp"
+                            android:text="Materi"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center"
+                            android:layout_marginLeft="10dp"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="150dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center_vertical|center_horizontal"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginLeft="7dp"
                         android:orientation="vertical">
 
@@ -471,7 +621,7 @@
 
                     <ImageView
                         android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_height="match_parent"
                         android:layout_gravity="start|center"
                         android:padding="15dp"
                         android:layout_marginLeft="10dp"
@@ -498,7 +648,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/lesson3"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="180dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
@@ -517,20 +667,19 @@
                         <TextView
                             android:layout_width="160dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="115dp"
+                            android:layout_marginStart="110dp"
                             android:layout_marginTop="10dp"
                             android:text="Workshop Manajemen Proyek"
                             android:textColor="@color/white"
                             android:textSize="16sp"
-                            android:textStyle="bold"
                             android:fontFamily="@font/poppinsmedium"/>
 
                         <TextView
                             android:id="@+id/jadwal3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="-40dp"
-                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="-55dp"
+                            android:layout_marginLeft="10dp"
                             android:background="@drawable/bg_rounded_trans"
                             android:backgroundTint="@color/white"
                             android:backgroundTintMode="add"
@@ -545,10 +694,70 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="130dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_gravity="center_horizontal">
+
+                        <TextView
+                            android:id="@+id/tvPresensi3"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_trans"
+                            android:backgroundTint="#00FFFFFF"
+                            android:backgroundTintMode="add"
+                            android:padding="3dp"
+                            android:text="Presensi"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center"
+                            />
+
+                        <TextView
+                            android:id="@+id/tvZoom3"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_trans"
+                            android:backgroundTint="#00FFFFFF"
+                            android:backgroundTintMode="add"
+                            android:padding="3dp"
+                            android:text="Zoom"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center"
+                            android:layout_marginLeft="10dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/tvMateri3"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_rounded_trans"
+                            android:backgroundTint="#00FFFFFF"
+                            android:backgroundTintMode="add"
+                            android:padding="3dp"
+                            android:text="Materi"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center"
+                            android:layout_marginLeft="10dp"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="150dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center_vertical|center_horizontal"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginLeft="7dp"
                         android:orientation="vertical">
 
@@ -581,7 +790,7 @@
 
                     <ImageView
                         android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_height="match_parent"
                         android:layout_gravity="start|center"
                         android:padding="15dp"
                         android:layout_marginLeft="10dp"

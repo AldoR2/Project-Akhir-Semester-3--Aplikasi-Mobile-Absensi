@@ -18,6 +18,7 @@ import com.example.minggu7.KalenderActivity;
 import com.example.minggu7.KehadiranActivity;
 import com.example.minggu7.LoginActivity;
 import com.example.minggu7.NotifikasiActivity;
+import com.example.minggu7.PresensiActivity;
 import com.example.minggu7.R;
 import com.example.minggu7.Register;
 import com.example.minggu7.ViewAllSchedule;
@@ -84,6 +85,7 @@ public class BerandaFragment extends Fragment {
         ImageView kehadiran = view.findViewById(R.id.kehadiran);
         ImageView kalender = view.findViewById(R.id.kalender);
         ImageView materi = view.findViewById(R.id.materi);
+        ImageView presensi = view.findViewById(R.id.presensi);
 
         // Set OnClickListener on the TextView
         jadwal1.setOnClickListener(new View.OnClickListener() {
@@ -202,6 +204,15 @@ public class BerandaFragment extends Fragment {
             public void onClick(View view) {
                 // Gunakan getActivity() untuk mendapatkan context dari Fragment
                 Intent intent = new Intent(getActivity(), CekMateriActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        presensi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Gunakan getActivity() untuk mendapatkan context dari Fragment
+                Intent intent = new Intent(getActivity(), PresensiActivity.class);
                 startActivity(intent);
             }
         });

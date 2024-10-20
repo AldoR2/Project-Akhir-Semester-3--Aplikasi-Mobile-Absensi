@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GantiAkunActivity">
+
+    <LinearLayout
+        android:id="@+id/toplinear"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_home_wave"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/back"
+            app:tint="@color/white"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Ganti Akun"
+            android:gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppinssemibold"
+            android:textSize="16sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="375dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/bgmobile_transparent"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="375dp"
+        android:layout_marginTop="425dp"
+        android:background="@drawable/bgmobile_transparent"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="#002D50">
+
+            <TextView
+                android:id="@+id/lb_prodi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Maksimal 3 akun yang dapat ditambahkan dalam 1 perangkat"
+                android:fontFamily="@font/poppinsregular"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:drawableStart="@drawable/ic_warning"
+                android:drawableTint="@color/white"
+                android:drawablePadding="15dp"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="165dp"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Izzul Islam Ramadhan"
+                android:fontFamily="@font/poppinsregular"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#002D50"
+                android:drawableStart="@drawable/user"
+                android:drawableEnd="@drawable/ic_check"
+                android:drawablePadding="15dp"
+                android:gravity="center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#002D50"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginBottom="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aldo Rayhan Radittyanuh"
+                android:fontFamily="@font/poppinsregular"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#002D50"
+                android:drawableStart="@drawable/user"
+                android:drawablePadding="15dp"
+                android:gravity="center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#002D50"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginBottom="15dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tambah Akun"
+                android:fontFamily="@font/poppinsbold"
+                android:textSize="16sp"
+                android:textColor="#002D50"
+                android:drawableStart="@drawable/ic_add"
+                android:drawableTint="#002D50"
+                android:drawablePadding="15dp"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

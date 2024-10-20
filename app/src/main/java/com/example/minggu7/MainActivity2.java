@@ -74,6 +74,10 @@ public class MainActivity2 extends AppCompatActivity implements NavigationBarVie
         } else if (selected == R.id.fr_profil) {
             fragment = new ProfilFragment();
         }
+
+        // Menandai item sebagai checked
+        item.setChecked(true);
+
         return loadFragment(fragment);
     }
 

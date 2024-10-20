@@ -16,6 +16,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.example.minggu7.DbHelper;
 import com.example.minggu7.EditProfile;
+import com.example.minggu7.GantiAkunActivity;
+import com.example.minggu7.GantiPasswordActivity;
+import com.example.minggu7.LayananActivity;
 import com.example.minggu7.LoginActivity;
 import com.example.minggu7.R;
 import com.example.minggu7.ViewAllSchedule;
@@ -37,10 +40,13 @@ public class ProfilFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profil, container, false);
 
-        // Initialize the Button
+        // Initialize
         Button edit_profile_button = view.findViewById(R.id.edit_profile_button);
         Button view_profile_button = view.findViewById(R.id.view_profile_button);
         Button logoutButton = view.findViewById(R.id.logout_button);
+        TextView ganti_password = view.findViewById(R.id.ganti_password);
+        TextView ganti_akun = view.findViewById(R.id.ganti_akun);
+        TextView ket_layanan = view.findViewById(R.id.ket_layanan);
 
 
         edit_profile_button.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +63,33 @@ public class ProfilFragment extends Fragment {
             public void onClick(View view) {
                 // Gunakan getActivity() untuk mendapatkan context dari Fragment
                 Intent intent = new Intent(getActivity(), ViewProfile.class);
+                startActivity(intent);
+            }
+        });
+
+        ganti_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Gunakan getActivity() untuk mendapatkan context dari Fragment
+                Intent intent = new Intent(getActivity(), GantiPasswordActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ganti_akun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Gunakan getActivity() untuk mendapatkan context dari Fragment
+                Intent intent = new Intent(getActivity(), GantiAkunActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ket_layanan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Gunakan getActivity() untuk mendapatkan context dari Fragment
+                Intent intent = new Intent(getActivity(), LayananActivity.class);
                 startActivity(intent);
             }
         });

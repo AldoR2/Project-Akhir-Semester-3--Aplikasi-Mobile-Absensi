@@ -16,6 +16,7 @@
         tools:ignore="MissingConstraints">
 
         <ImageView
+            android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:src="@drawable/back"
@@ -190,7 +191,7 @@
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:text="Tanggal Lahir"
+                    android:text="TTL"
                     android:textColor="#002D50"
                     android:textSize="13sp"
                     android:textStyle="bold"
@@ -212,7 +213,7 @@
                     android:id="@+id/tvDob"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="27 September 2005"
+                    android:text="Jember, 27 September 2005"
                     android:textColor="#002D50"
                     android:textSize="12sp"
                     android:layout_marginStart="10dp"

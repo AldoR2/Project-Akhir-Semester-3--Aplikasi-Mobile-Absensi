@@ -17,14 +17,17 @@
         android:layout_marginBottom="55dp"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
         android:id="@+id/navigation"
-        app:itemRippleColor="#F6F8FF"
-        app:itemTextColor="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:itemRippleColor="#BFBFBF"
+        app:itemIconTint="@transition/nav_item_color"
+        app:itemTextColor="@transition/nav_text_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_navigation"/>
+        app:menu="@menu/bottom_navigation" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

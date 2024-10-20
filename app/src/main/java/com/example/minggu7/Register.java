@@ -85,7 +85,7 @@ public class Register extends AppCompatActivity {
 
 // Mengatur offset vertikal dan lebar untuk dropdown pertama
         autoCompleteProdi.setDropDownVerticalOffset(0);
-        autoCompleteProdi.setDropDownWidth(LinearLayout.LayoutParams.MATCH_PARENT);
+        autoCompleteProdi.setDropDownWidth(LinearLayout.LayoutParams.WRAP_CONTENT);
 
 // Menampilkan dropdown saat AutoCompleteTextView pertama diklik
         autoCompleteProdi.setOnClickListener(new View.OnClickListener() {
@@ -103,8 +103,7 @@ public class Register extends AppCompatActivity {
 
         autoCompleteJenisKelamin.setAdapter(kategoriAdapter);
 
-        autoCompleteJenisKelamin.setDropDownVerticalOffset(0);
-        autoCompleteJenisKelamin.setDropDownWidth(LinearLayout.LayoutParams.MATCH_PARENT);
+        autoCompleteJenisKelamin.setDropDownWidth(LinearLayout.LayoutParams.WRAP_CONTENT);
 
         autoCompleteJenisKelamin.setOnClickListener(new View.OnClickListener() {
             @Override
