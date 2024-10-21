@@ -105,10 +105,10 @@
                 android:textColor="@android:color/darker_gray" />
 
             <TextView
-                android:id="@+id/lb_jurusan"
+                android:id="@+id/lb_semester"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Jurusan"
+                android:text="Semester"
                 android:fontFamily="@font/poppinsregular"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -119,7 +119,7 @@
                 android:id="@+id/jurusan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Teknologi Informasi"
+                android:text="3"
                 android:textSize="15sp"
                 android:layout_marginBottom="20dp"
                 android:textColor="@android:color/darker_gray" />

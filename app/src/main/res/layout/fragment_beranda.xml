@@ -90,14 +90,21 @@
                     android:layout_below="@id/LinearLogo">
 
                     <TextView
+                        android:id="@+id/tvNama"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Izzul Islam Ramadhan"
                         android:textColor="#002D50"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:layout_marginBottom="5dp"
                         android:fontFamily="@font/poppinsmedium"/>
+
+                    <View
+                        android:id="@+id/lineView"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#002D50"
+                        android:layout_marginBottom="5dp"/>
 
                     <TextView
                         android:id="@+id/tvName"
@@ -106,6 +113,7 @@
                         android:text="E41231215"
                         android:textColor="#002D50"
                         android:textSize="12sp"
+                        android:textStyle="bold"
                         android:fontFamily="@font/poppinsregular"/>
                 </LinearLayout>
 

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".KalenderActivity">
+    tools:context=".IsiMateriActivity">
 
     <LinearLayout
         android:id="@+id/toplinear"
@@ -26,7 +26,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Kalender Akademik"
+            android:text="Materi Perkuliahan"
             android:gravity="center_vertical"
             android:layout_marginStart="10dp"
             android:textColor="@color/white"
@@ -45,14 +45,5 @@
         android:layout_height="375dp"
         android:layout_marginTop="425dp"
         android:background="@drawable/bgmobile_transparent"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Belum ada Kalender!"
-        android:fontFamily="@font/poppinsbold"
-        android:textSize="24sp"
-        tools:ignore="MissingConstraints" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

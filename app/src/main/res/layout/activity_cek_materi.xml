@@ -35,13 +35,245 @@
             />
     </LinearLayout>
 
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="375dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/bgmobile_transparent"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="375dp"
+        android:layout_marginTop="425dp"
+        android:background="@drawable/bgmobile_transparent"/>
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Oops! System Error"
-        android:fontFamily="@font/poppinsbold"
-        android:textSize="24sp"
-        tools:ignore="MissingConstraints" />
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_home_wave"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/lesson1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="115dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Pemrograman Dasar"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="10dp"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="start|center"
+                    android:padding="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/lesson"
+                    app:tint="@color/white" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_home_wave"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/lesson2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="115dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Jaringan Komputer"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="10dp"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="start|center"
+                    android:padding="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/lesson"
+                    app:tint="@color/white" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_home_wave"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/lesson3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="115dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Interpersonal Skill"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="10dp"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="start|center"
+                    android:padding="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/lesson"
+                    app:tint="@color/white" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_home_wave"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/lesson4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="115dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Workshop Sistem Informasi Berbasis Web"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="10dp"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="start|center"
+                    android:padding="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/lesson"
+                    app:tint="@color/white" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_home_wave"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/lesson5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="115dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Workshop Mobile Application"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/poppinsmedium"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="10dp"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="start|center"
+                    android:padding="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/lesson"
+                    app:tint="@color/white" />
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

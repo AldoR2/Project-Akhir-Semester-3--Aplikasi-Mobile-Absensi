@@ -13,6 +13,18 @@
         android:theme="@style/Theme.Minggu7"
         tools:targetApi="31">
         <activity
+            android:name=".LinkZoomActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LinkMateriActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LinkPresensiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".IsiMateriActivity"
+            android:exported="false" />
+        <activity
             android:name=".LayananActivity"
             android:exported="false" />
         <activity

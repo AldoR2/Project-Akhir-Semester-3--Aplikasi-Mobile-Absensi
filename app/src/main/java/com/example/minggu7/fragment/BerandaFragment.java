@@ -10,12 +10,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.minggu7.CekMateriActivity;
 import com.example.minggu7.KalenderActivity;
 import com.example.minggu7.KehadiranActivity;
+import com.example.minggu7.LinkMateriActivity;
+import com.example.minggu7.LinkPresensiActivity;
+import com.example.minggu7.LinkZoomActivity;
 import com.example.minggu7.LoginActivity;
 import com.example.minggu7.NotifikasiActivity;
 import com.example.minggu7.PresensiActivity;
@@ -86,6 +90,17 @@ public class BerandaFragment extends Fragment {
         ImageView kalender = view.findViewById(R.id.kalender);
         ImageView materi = view.findViewById(R.id.materi);
         ImageView presensi = view.findViewById(R.id.presensi);
+        TextView tvNama = view.findViewById(R.id.tvNama);
+        View lineView = view.findViewById(R.id.lineView);
+        TextView tvPresensi1 = view.findViewById(R.id.tvPresensi1);
+        TextView tvPresensi2 = view.findViewById(R.id.tvPresensi2);
+        TextView tvPresensi3 = view.findViewById(R.id.tvPresensi3);
+        TextView tvZoom1 = view.findViewById(R.id.tvZoom1);
+        TextView tvZoom2 = view.findViewById(R.id.tvZoom2);
+        TextView tvZoom3 = view.findViewById(R.id.tvZoom3);
+        TextView tvMateri1 = view.findViewById(R.id.tvMateri1);
+        TextView tvMateri2 = view.findViewById(R.id.tvMateri2);
+        TextView tvMateri3 = view.findViewById(R.id.tvMateri3);
 
         // Set OnClickListener on the TextView
         jadwal1.setOnClickListener(new View.OnClickListener() {
@@ -214,6 +229,58 @@ public class BerandaFragment extends Fragment {
                 // Gunakan getActivity() untuk mendapatkan context dari Fragment
                 Intent intent = new Intent(getActivity(), PresensiActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        View.OnClickListener linkpresensi = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Gunakan getActivity() untuk mendapatkan context dari Fragment
+                Intent intent = new Intent(getActivity(), LinkPresensiActivity.class);
+                startActivity(intent);
+            }
+        };
+
+        View.OnClickListener linkzoom = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Gunakan getActivity() untuk mendapatkan context dari Fragment
+                Intent intent = new Intent(getActivity(), LinkZoomActivity.class);
+                startActivity(intent);
+            }
+        };
+
+        View.OnClickListener linkmateri = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Gunakan getActivity() untuk mendapatkan context dari Fragment
+                Intent intent = new Intent(getActivity(), LinkMateriActivity.class);
+                startActivity(intent);
+            }
+        };
+
+        // Terapkan listener yang sama ke kedua TextView
+        tvPresensi1.setOnClickListener(linkpresensi);
+        tvPresensi2.setOnClickListener(linkpresensi);
+        tvPresensi3.setOnClickListener(linkpresensi);
+        tvZoom1.setOnClickListener(linkzoom);
+        tvZoom2.setOnClickListener(linkzoom);
+        tvZoom3.setOnClickListener(linkzoom);
+        tvMateri1.setOnClickListener(linkmateri);
+        tvMateri2.setOnClickListener(linkmateri);
+        tvMateri3.setOnClickListener(linkmateri);
+
+
+        tvNama.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                int textViewWidth = tvNama.getWidth();
+                ViewGroup.LayoutParams layoutParams = lineView.getLayoutParams();
+                layoutParams.width = textViewWidth;
+                lineView.setLayoutParams(layoutParams);
+
+                // Hapus listener agar tidak dipanggil berulang kali
+                tvNama.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
         });
 

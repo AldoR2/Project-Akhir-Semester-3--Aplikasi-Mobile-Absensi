@@ -265,13 +265,57 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/LinearEmail"
+                android:id="@+id/LinearAlamat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_centerInParent="true"
                 android:orientation="horizontal"
                 android:layout_marginTop="130dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_below="@id/LinearLogo">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Alamat"
+                    android:textColor="#002D50"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:layout_marginStart="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textColor="#002D50"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/poppinsmedium"/>
+
+                <TextView
+                    android:id="@+id/tvAlamat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jl. Jawa IV A/1 Jember, Jawa Timur"
+                    android:textColor="#002D50"
+                    android:textSize="12sp"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/poppinsregular"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:layout_marginTop="160dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_below="@id/LinearLogo">
@@ -315,7 +359,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_centerInParent="true"
                 android:orientation="horizontal"
-                android:layout_marginTop="160dp"
+                android:layout_marginTop="190dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_below="@id/LinearLogo">
@@ -359,7 +403,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_centerInParent="true"
                 android:orientation="horizontal"
-                android:layout_marginTop="190dp"
+                android:layout_marginTop="220dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_below="@id/LinearLogo">
@@ -403,7 +447,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_centerInParent="true"
                 android:orientation="horizontal"
-                android:layout_marginTop="220dp"
+                android:layout_marginTop="250dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_below="@id/LinearLogo">
